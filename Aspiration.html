@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTI UMP - Aspirasi</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/aspiration.css">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="images/Logo HMTI_20250809_192857_0000.png" alt="HMTI UMP" class="logo-img">
+                <div class="logo-text">HMTI UMP</div>
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#member" class="nav-link">Member</a>
+                <a href="#proker" class="nav-link">Proker</a>
+                <a href="#studyclub" class="nav-link">StudyClub</a>
+                <a href="#aspiration" class="nav-link active">Aspiration</a>
+            </nav>
+
+            <a href="#contact" class="nav-cta">Bergabung</a>
+
+            <button class="nav-toggle">
+                <svg width="24" height="24" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M3 6h18M3 12h18M3 18h18" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="aspiration-container">
+            <!-- Card Container -->
+            <div class="aspiration-card">
+                <!-- Header -->
+                <div class="aspiration-header">
+                    <h1 class="aspiration-title">Sampaikan Aspirasi Anda</h1>
+                    <p class="aspiration-subtitle">Suara Anda penting bagi kemajuan HMTI UMP</p>
+                </div>
+
+                <!-- Form -->
+                <form id="aspiration-form" class="aspiration-form">
+                    <!-- Name Field -->
+                    <div class="form-group">
+                        <label for="name" class="form-label">Nama Lengkap</label>
+                        <input type="text" id="name" class="form-input" placeholder="Masukkan nama lengkap">
+                    </div>
+
+                    <!-- Email Field -->
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" class="form-input" placeholder="contoh@email.com">
+                    </div>
+
+                    <!-- Category Field -->
+                    <div class="form-group">
+                        <label for="category" class="form-label">Kategori Aspirasi</label>
+                        <select id="category" class="form-input">
+                            <option value="">Pilih kategori</option>
+                            <option value="academic">Akademik</option>
+                            <option value="organization">Organisasi</option>
+                            <option value="facility">Fasilitas</option>
+                            <option value="event">Kegiatan</option>
+                            <option value="other">Lainnya</option>
+                        </select>
+                    </div>
+
+                    <!-- Message Field -->
+                    <div class="form-group">
+                        <label for="message" class="form-label">Isi Aspirasi</label>
+                        <textarea id="message" rows="4" class="form-input form-textarea"
+                            placeholder="Tuliskan aspirasi Anda secara detail..."></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" id="submit-btn" class="submit-btn">
+                        <i class="fas fa-paper-plane btn-icon"></i>
+                        Kirim Aspirasi
+                    </button>
+                </form>
+
+                <!-- Success Message (Hidden by default) -->
+                <div id="success-message" class="success-message">
+                    <i class="fas fa-check-circle success-icon"></i>
+                    <p class="success-title">Aspirasi Anda berhasil dikirim!</p>
+                    <p class="success-text">Terima kasih atas kontribusi Anda.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-main">
+                <!-- Brand & Contact Info -->
+                <div class="footer-brand">
+                    <img src="images/Logo HMTI_20250809_192857_0000.png" alt="Logo HMTI UMP" class="footer-logo-img">
+                    <div class="footer-logo-text">HMTI UMP</div>
+                    <p class="footer-description">
+                        Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains Universitas Muhammadiyah
+                        Purwokerto
+                    </p>
+
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-label">Alamat</span>
+                            <span class="contact-detail">Jl. Kh. Ahmad Dahlan, Purwokerto, Banyumas, Jawa Tengah
+                                53182</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-label">Email</span>
+                            <span class="contact-detail">hmti@ump.ac.id</span>
+                        </div>
+
+                        <div class="contact-item">
+                            <span class="contact-label">Telepon</span>
+                            <span class="contact-detail">+62 281-4770-5291</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation & FYI -->
+                <div class="footer-navigation">
+                    <div class="nav-section">
+                        <h4 class="nav-title">Navigasi</h4>
+                        <ul class="nav-list">
+                            <li class="nav-item">Home</li>
+                            <li class="nav-item">About</li>
+                            <li class="nav-item">Member</li>
+                            <li class="nav-item">Proker</li>
+                            <li class="nav-item">StudyClub</li>
+                            <li class="nav-item">Aspiration</li>
+                        </ul>
+                    </div>
+
+                    <div class="fyi-section">
+                        <h4 class="fyi-title">FYI</h4>
+                        <ul class="fyi-list">
+                            <li class="fyi-item">FAQ</li>
+                            <li class="fyi-item">Testimonials</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="footer-copyright">
+                © 2025 HMTI UMP. Made by HMTI Ristek
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
