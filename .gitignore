@@ -131,3 +131,19 @@ tmp/
 
 # Config files (except template)
 config.local.*
+# ==================== HMTI_UMP SPECIFIC ====================
+# Temporary files
+/temp/
+/tmp/
+
+# Uploads
+/uploads/
+/media/
+
+# Database 
+*.sqlite3
+*.db
+
+# Log files
+/logs/
+*.log" >> .gitignore
