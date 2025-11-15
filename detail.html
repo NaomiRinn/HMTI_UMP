@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail Program Kerja - HMTI UMP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in-up { animation: fadeInUp 0.7s ease forwards; }
+
+    body { padding-top: 80px; }
+  </style>
+</head>
+
+<body class="bg-[#fff5f7] text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full top-0 z-50 bg-[#002855]/90 backdrop-blur border-b border-[#F2B705]/20 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-white">
+
+    <!-- LOGO (kiri) -->
+    <div class="flex items-center space-x-3">
+      <img src="images/HMTI.png" alt="HMTI Logo" class="w-9 h-9" />
+      <h1 class="text-lg font-bold tracking-wide">HMTI UMP</h1>
+    </div>
+
+    <!-- MENU (kanan, dengan jarak aman) -->
+    <ul class="hidden md:flex space-x-8 text-sm font-medium pr-4"> 
+      <li><a href="#" class="hover:text-[#F2B705] transition">Home</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">About</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">Member</a></li>
+      <li><a href="#" class="text-[#F2B705] font-semibold">Proker</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">StudyClub</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">Aspiration</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="w-full bg-white shadow-sm py-4 px-6 flex items-center gap-3 text-sm font-medium text-gray-700 border-b border-[#F2B705]/20">
+  <a href="index.html" class="flex items-center gap-1 hover:text-[#F2B705] text-[#002855]">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0h6" />
+    </svg>
+    Home
+  </a>
+
+  <span class="text-gray-400">›</span>
+  <a href="proker.html" class="hover:text-[#F2B705] text-[#002855]">Proker</a>
+  <span class="text-gray-400">›</span>
+
+  <span id="breadcrumbTitle" class="px-3 py-1 rounded-lg bg-[#F2B705]/10 text-[#002855] font-semibold">
+    Loading...
+  </span>
+</div>
+
+<!-- HEADER -->
+<section class="px-6 md:px-20 py-10 fade-in-up">
+  <span id="prokerCategory" class="px-4 py-1 text-white text-sm rounded-full bg-[#002855]"></span>
+  <span class="ml-3 text-gray-600">Presented by <span id="prokerDept"></span></span>
+
+  <h1 id="prokerTitle" class="text-4xl md:text-5xl font-extrabold text-[#F2B705] mt-4">Loading...</h1>
+
+  <div class="flex items-center gap-2 mt-3 text-gray-600">
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M8 7V3m8 4V3m-9 8h10m-12 8h14a2 2 0 002-2V7a2 2 0 00-2 2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+    </svg>
+    <span id="prokerTime">-</span>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="px-6 md:px-20 fade-in-up">
+  <img id="prokerImage" src="" class="rounded-2xl shadow-xl w-full max-h-[480px] object-cover" />
+</section>
+
+<!-- DESCRIPTION -->
+<section class="px-6 md:px-20 mt-10 fade-in-up">
+  <div class="bg-white shadow-md rounded-3xl p-8">
+    <h2 class="text-2xl font-bold text-[#F2B705] mb-4">Description</h2>
+    <p id="prokerDesc" class="leading-relaxed text-gray-700"></p>
+
+    <h3 class="text-xl font-bold text-[#F2B705] mt-6 mb-2">Benefits:</h3>
+    <ul id="prokerBenefits" class="list-disc ml-5 text-gray-700"></ul>
+  </div>
+</section>
+
+<!-- PROGRAM LAINNYA (AUTO SLIDER) -->
+<section class="px-6 md:px-20 py-20 fade-in-up">
+  <h2 class="text-4xl font-bold text-center">
+    <span class="text-[#F2B705]">Program</span> Lainnya
+  </h2>
+
+  <div class="relative mt-12">
+    <div id="otherProker" class="flex gap-6 overflow-x-auto pb-4 scroll-smooth"></div>
+  </div>
+</section>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const id = params.get("id");
+
+  /* =========================
+     DATA PROKER (FULL)
+  ========================= */
+  const data = {
+
+  /* ======================  
+     =======  BPH  =========  
+     ====================== */
+  "rakor": {
+    title: "Rapat Internal BPH",
+    image: "images/rakor.jpeg",
+    desc: "Rapat rutin Badan Pengurus Harian untuk membahas agenda, evaluasi, dan pengambilan keputusan organisasi.",
+    departemen: "BPH"
+  },
+  "monitoring-proker": {
+    title: "Monitoring Program Kerja",
+    image: "images/monev.jpg",
+    desc: "Kegiatan pemantauan program kerja setiap departemen untuk memastikan progres berjalan sesuai timeline.",
+    departemen: "BPH"
+  },
+
+  /* ======================
+     ===== RISTEK =========
+     ====================== */
+  "webdev": {
+    title: "Pelatihan Web Development",
+    image: "images/webdev.jpg",
+    desc: "Publikasi rutin mengenai informasi teknologi terbaru yang dikurasi oleh Departemen RISTEK.",
+    departemen: "RISTEK"
+  },
+};
+
+/* =========================
+   RENDER DETAIL PROGRAM
+========================= */
+const item = data[id];
+
+if (!item) {
+  document.getElementById("prokerTitle").textContent = "Program tidak ditemukan";
+  document.getElementById("breadcrumbTitle").textContent = "Not Found";
+} else {
+  document.getElementById("breadcrumbTitle").textContent = item.title;
+  document.getElementById("prokerTitle").textContent = item.title;
+
+  document.getElementById("prokerDept").textContent =
+    item.departemen || "-";
+
+  document.getElementById("prokerImage").src = item.image;
+  document.getElementById("prokerDesc").textContent = item.desc;
+
+  const list = document.getElementById("prokerBenefits");
+  list.innerHTML = "";
+
+  (item.benefits || []).forEach(text => {
+    const li = document.createElement("li");
+    li.textContent = text;
+    list.appendChild(li);
+  });
+}
+
+/* =========================
+   PROGRAM LAINNYA
+========================= */
+const otherProker = document.getElementById("otherProker");
+otherProker.innerHTML = "";
+
+Object.keys(data).forEach(key => {
+  if (key !== id) {
+    const p = data[key];
+
+    const card = `
+      <a href="detail.html?id=${key}"
+        class="min-w-[280px] md:min-w-[330px] bg-white shadow-md rounded-2xl p-5 hover:scale-105 transition">
+        <img src="${p.image}" class="rounded-xl h-40 w-full object-cover" />
+        <h3 class="text-lg font-bold mt-3 text-[#002855]">${p.title}</h3>
+        <p class="text-sm text-gray-600">${p.departemen}</p>
+      </a>
+    `;
+
+    otherProker.innerHTML += card;
+  }
+});
+</script>
+
+</body>
+</html>

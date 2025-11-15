@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Kerja HMTI UMP</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="images/HMTI.png" />
+
+  <style>
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-up {
+      animation: fadeInUp 0.7s ease forwards;
+    }
+
+    /* Glow efek biru–kuning */
+    .glow-hover:hover {
+      box-shadow: 0 0 15px rgba(242, 183, 5, 0.55), 
+                  0 0 25px rgba(0, 40, 85, 0.5);
+      transform: translateY(-5px);
+    }
+
+    .card-hidden { display: none; }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+
+<body class="antialiased font-sans text-gray-800 bg-gradient-to-b from-[#001b3d]/40 via-[#002855]/20 to-[#002855]/5">
+
+<!-- NAVBAR -->
+<nav class="fixed w-full top-0 z-50 bg-[#002855]/90 backdrop-blur border-b border-[#F2B705]/20 shadow-md">
+  <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between text-white">
+
+    <!-- LOGO (kiri) -->
+    <div class="flex items-center space-x-3">
+      <img src="images/HMTI.png" alt="HMTI Logo" class="w-9 h-9" />
+      <h1 class="text-lg font-bold tracking-wide">HMTI UMP</h1>
+    </div>
+
+    <!-- MENU (kanan, dengan jarak aman) -->
+    <ul class="hidden md:flex space-x-8 text-sm font-medium pr-4"> 
+      <li><a href="#" class="hover:text-[#F2B705] transition">Home</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">About</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">Member</a></li>
+      <li><a href="#" class="text-[#F2B705] font-semibold">Proker</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">StudyClub</a></li>
+      <li><a href="#" class="hover:text-[#F2B705] transition">Aspiration</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+
+
+
+  <!-- HERO -->
+  <section id="proker" 
+    class="relative pt-44 pb-48 md:pt-48 md:pb-48
+    text-center overflow-hidden 
+    bg-gradient-to-b from-[#001A38] via-[#003A75]/70 to-[#F2B705]/20">
+
+    <!-- Glow -->
+    <div class="absolute top-24 left-28 w-20 h-20 bg-[#F2B705]/30 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 right-32 w-32 h-32 bg-[#002855]/40 rounded-full blur-3xl"></div>
+
+    <div class="max-w-3xl mx-auto px-6 relative z-10 text-white fade-in-up">
+
+      <div class="inline-block bg-[#F2B705]/25 text-[#F2B705] 
+        text-sm font-semibold px-6 py-2 rounded-full mb-6 
+        border border-[#F2B705]/40 shadow-sm">
+        Program Kerja
+      </div>
+
+      <h1 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
+        <span class="text-[#F2B705]">Program</span>
+        <span class="text-white">Kerja</span> HMTI UMP
+      </h1>
+
+      <p class="text-gray-200 text-lg leading-relaxed mb-16">
+        Jelajahi berbagai program kerja inspiratif dari setiap departemen HMTI.
+      </p>
+
+      <a href="#list-proker" 
+        class="inline-block text-[#F2B705] hover:text-white transition">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+          class="h-10 w-10 mx-auto animate-bounce" 
+          fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
+            d="M19 9l-7 7-7-7" />
+        </svg>
+      </a>
+
+    </div>
+
+  </section>
+
+  <!-- LIST -->
+  <section id="list-proker" class="py-24 bg-gradient-to-b from-white via-[#dce8ff]/20 to-[#002855]/80">
+
+    <div class="max-w-6xl mx-auto px-6 text-center reveal">
+      <h2 class="text-3xl font-extrabold text-[#002855] mb-12">Daftar Program Kerja</h2>
+
+      <!-- FILTER BUTTONS -->
+      <div class="flex flex-wrap justify-center gap-3 mb-12">
+        <button class="filter-btn active bg-[#F2B705] text-[#002855] font-semibold px-6 py-2 rounded-lg shadow-sm glow-hover">
+          Semua
+        </button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">BPH</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">RISTEK</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">HUMAS</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">PSDM</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">EKRAF</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">KOMINFO</button>
+        <button class="filter-btn border border-[#002855]/40 text-[#002855] hover:bg-[#002855]/10 px-6 py-2 rounded-lg glow-hover">ADVO</button>
+      </div>
+
+      <!-- GRID -->
+      <div id="prokerGrid" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
+
+        <!-- Contoh proker 1 -->
+      <div class="proker-card bg-white rounded-3xl shadow-md border border-[#002855]/10 overflow-hidden glow-hover group"
+        data-dept="BPH">
+
+        <div class="overflow-hidden">
+          <img src="images/rakor.jpeg"
+              class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+        </div>
+
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-extrabold text-[#002855] mb-1">Rapat Koordinasi</h3>
+          <p class="text-gray-500 text-sm mb-3">Bulanan • Offline</p>
+          <p class="text-gray-700 text-sm mb-4">Pertemuan rutin untuk evaluasi dan koordinasi antar pengurus.</p>
+
+          <a href="detail.html?id=rakor" class="text-[#002855] hover:text-[#F2B705] flex items-center gap-1 text-sm">
+            Selengkapnya →
+          </a>
+        </div>
+      </div>
+
+      <!-- Contoh proker 2 -->
+      <div class="proker-card bg-white rounded-3xl shadow-md border border-[#002855]/10 overflow-hidden glow-hover group"
+        data-dept="BPH">
+
+        <div class="overflow-hidden">
+          <img src="images/monev.jpg"
+              class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+        </div>
+
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-extrabold text-[#002855] mb-1">Monitoring & Evaluasi</h3>
+          <p class="text-gray-500 text-sm mb-3">Periode • Offline</p>
+          <p class="text-gray-700 text-sm mb-4">Evaluasi perkembangan program kerja setiap divisi.</p>
+
+          <a href="detail.html?id=monitoring-proker" class="text-[#002855] hover:text-[#F2B705] flex items-center gap-1 text-sm">
+            Selengkapnya →
+          </a>
+        </div>
+      </div>
+
+      <!-- Contoh proker 3 -->
+      <div class="proker-card bg-white rounded-3xl shadow-md border border-[#002855]/10 overflow-hidden glow-hover group"
+        data-dept="RISTEK">
+
+        <div class="overflow-hidden">
+          <img src="images/webdev.jpg"
+              class="w-full h-48 object-cover transform transition duration-500 group-hover:scale-110">
+        </div>
+
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-extrabold text-[#002855] mb-1">Pelatihan Web Development</h3>
+          <p class="text-gray-500 text-sm mb-3">Bulanan • Online</p>
+          <p class="text-gray-700 text-sm mb-4">Pelatihan HTML, CSS, dan JavaScript untuk mahasiswa.</p>
+
+          <a href="detail.html?id=webdev" class="text-[#002855] hover:text-[#F2B705] flex items-center gap-1 text-sm">
+            Selengkapnya →
+          </a>
+        </div>
+      </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#002855] text-white">
+
+    <div class="max-w-6xl mx-auto px-6 py-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+      <div>
+        <div class="flex items-center gap-3 mb-3">
+          <img src="images/HMTI.png" class="w-12 h-12 rounded-full">
+          <div class="font-semibold text-lg">HMTI UMP</div>
+        </div>
+        <p class="text-sm text-slate-200">
+          Himpunan Mahasiswa Teknik Informatika<br>
+          Fakultas Teknik dan Sains – Universitas Muhammadiyah Purwokerto
+        </p>
+      </div>
+
+      <div class="md:col-span-2 grid grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-[#F2B705] font-semibold mb-3">Navigasi</h4>
+          <ul class="text-slate-100 text-sm space-y-2">
+            <li>Home</li><li>About</li><li>Member</li><li>Proker</li><li>StudyClub</li><li>Aspiration</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-[#F2B705] font-semibold mb-3">FYI</h4>
+          <ul class="text-slate-100 text-sm space-y-2">
+            <li>FAQ</li><li>Testimonials</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="border-t border-[#F2B705]/30">
+      <div class="max-w-6xl mx-auto px-6 py-4 text-center text-sm text-slate-300">
+        © 2025 HMTI UMP. Made by HMTI Ristek
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // Filter logic fixed
+    const buttons = document.querySelectorAll('.filter-btn');
+    const cards = document.querySelectorAll('.proker-card');
+
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('bg-[#F2B705]', 'text-[#002855]', 'font-semibold'));
+        btn.classList.add('bg-[#F2B705]', 'text-[#002855]', 'font-semibold');
+
+        const dept = btn.textContent.trim().toUpperCase();
+
+        cards.forEach(card => {
+          card.classList.add('card-hidden');
+
+          if (dept === 'SEMUA' || card.dataset.dept.toUpperCase() === dept) {
+            setTimeout(() => {
+              card.classList.remove('card-hidden');
+              card.classList.add('fade-in-up');
+            }, 80);
+          }
+        });
+      });
+    });
+
+    // Scroll reveal
+    function reveal() {
+      const reveals = document.querySelectorAll(".reveal");
+      for (let i = 0; i < reveals.length; i++) {
+        const windowHeight = window.innerHeight;
+        const elementTop = reveals[i].getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          reveals[i].classList.add("active");
+        }
+      }
+    }
+    window.addEventListener("scroll", reveal);
+    reveal();
+  </script>
+
+</body>
+</html>
