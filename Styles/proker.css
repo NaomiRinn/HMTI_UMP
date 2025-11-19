@@ -1,0 +1,551 @@
+/* =========================================================
+   ★ THEME ROOT COLOR (Blue–Gold HMTI)
+========================================================= */
+:root {
+  --deep: #002855;
+  --accent: #F2B705;
+  --accent-light: #f7d54c;
+
+  --hero-from: #001A38;
+  --hero-to: #003A75;
+
+  --bg-soft: #f5f7fb;
+  --soft-gray: #e5e7eb;
+
+  --radius-lg: 22px;
+  --shadow-card: 0 10px 25px rgba(0, 40, 85, 0.15);
+  --shadow-hover: 0 18px 40px rgba(0, 40, 85, 0.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background: var(--bg-soft);
+  color: #10223b;
+  scroll-behavior: smooth;
+}
+
+
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #d3d3d3;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1250px;
+  height: 72px;
+  margin: 0 auto;
+  padding: 0 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.nav-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.nav-logo-img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+}
+
+.nav-logo-text {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* Menu */
+.nav-center {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.nav-link {
+  font-size: 14px;
+  text-decoration: none;
+  color: #222;
+  padding-bottom: 3px;
+  transition: 0.2s;
+}
+
+.nav-link:hover {
+  color: #000;
+}
+
+.nav-link.active {
+  border-bottom: 1.5px solid #000;
+  font-weight: 500;
+}
+
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+.hero {
+  height: 100vh;
+  background: linear-gradient(180deg, var(--hero-from), var(--hero-to));
+  color: #fff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 24px;
+}
+
+.hero-inner {
+  max-width: 720px;
+}
+
+.chip {
+  background: var(--accent);
+  color: #000;
+  padding: 10px 26px;
+  border-radius: 999px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.hero-desc {
+  font-size: 18px;
+  opacity: 0.9;
+  margin-bottom: 26px;
+}
+
+/* Scroll down icon */
+.scroll-down {
+  display: flex;
+  justify-content: center;
+}
+
+.scroll-down svg {
+  width: 42px;
+  height: 42px;
+  stroke: var(--accent);
+  animation: bounce 1.6s infinite;
+}
+
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+
+
+/* =========================================================
+   PROKER SECTION
+========================================================= */
+.proker-section {
+  padding: 40px 0 70px;
+  text-align: center;
+}
+
+.proker-title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #000;
+}
+
+.proker-title .blue {
+  color: #0A0E9F;
+}
+
+.proker-subtitle {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 28px;
+}
+
+/* Filter */
+.proker-filters {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 35px;
+}
+
+.filter-btn {
+  padding: 10px 26px;
+  background: #0A0E9F;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+.filter-btn:hover {
+  background-color: #08107f;
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: #000;
+}
+
+
+
+/* Cards */
+.proker-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+}
+
+.proker-card {
+    width: 420px;
+    height: 230px;
+
+    border-radius: 16px;
+    position: relative;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+
+    padding: 20px;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat;
+
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+
+    transition: 0.25s ease;
+}
+
+.card-detail {
+    position: absolute;
+    bottom: 18px;
+    left: 18px;
+
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+
+    border-radius: 10px;
+
+    color: #fff;
+    font-size: 14.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+
+    text-decoration: none;
+    text-shadow: 0 2px 6px rgba(0, 0, 0, .9);
+
+    transition: 0.25s ease;
+}
+
+/* Hover: lebih gelap dan sedikit naik */
+.card-detail:hover {
+    background: rgba(0, 0, 0, 0.75);
+    transform: translateY(-2px);
+}
+
+
+.proker-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(0,0,0,0.25);
+}
+
+
+.proker-card.empty {
+    background: #d9d9d9;       /* warna abu abu lembut */
+    border: 2px dashed #b0b0b0;
+    background-image: none !important;
+}
+
+.proker-card.empty .card-detail {
+    opacity: 0.5;
+    pointer-events: none;     /* tombol tidak bisa diklik */
+}
+
+
+.hidden-card {
+    display: none;
+}
+
+.fade-in {
+    animation: fadeIn .4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+/* More Button */
+.more-wrapper {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.btn-more {
+  padding: 10px 28px;
+  background: #0A0E9F;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-more:hover {
+  background: #08107f;
+}
+
+/* ============================================
+   BUTTON LESS (Lebih Sedikit)
+=============================================== */
+.btn-less {
+    margin-top: 15px;
+    padding: 12px 26px;
+    border: none;
+    border-radius: 8px;
+    background: #d9534f; /* warna merah halus */
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    display: inline-block;
+}
+
+/* Hover effect */
+.btn-less:hover {
+    background: #c9302c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(217, 83, 79, 0.35);
+}
+
+/* Hidden State */
+.hidden-less {
+    display: none;
+}
+
+
+
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+    background: linear-gradient(180deg, #fafbff, #f3f4ff);
+    padding: 60px 0 20px;
+    color: #344055;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 25px;
+
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 40px;
+}
+
+/* BRANDING */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.footer-brand img {
+    width: 65px;
+    border-radius: 16px;
+}
+
+.footer-brand h2 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 600;
+    color: #0f256e;
+}
+
+.footer-brand .tagline {
+    font-size: 14px;
+    margin-top: -4px;
+    color: #7a84a1;
+}
+
+/* DESCRIPTION */
+.footer-description {
+    margin: 18px 0 25px;
+    line-height: 1.6;
+}
+
+/* CONTACT INFO */
+.contact-info .info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icon-box {
+    width: 42px;
+    height: 42px;
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: #0f256e;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+/* RIGHT CARDS */
+.footer-card {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 25px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.footer-card h3 {
+    color: #0f256e;
+    margin-bottom: 18px;
+    font-size: 20px;
+}
+
+.footer-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-card li {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-card li::before {
+    content: "•";
+    color: #0f256e;
+}
+
+/* SOCIAL ICONS */
+.footer-social {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-box {
+    width: 48px;
+    height: 48px;
+    background: #fff;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #0f256e;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.09);
+}
+
+/* BOTTOM */
+.footer-bottom {
+    margin-top: 35px;
+    text-align: center;
+    color: #556173;
+    font-size: 14px;
+    padding-top: 15px;
+    border-top: 1px solid #e3e3e3;
+}
+
+
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+@media (max-width: 850px) {
+
+  .nav-container {
+    justify-content: space-between;
+  }
+
+  .nav-center {
+    gap: 18px;
+  }
+
+  .proker-card {
+    width: 90%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+  }
+
+  .footer-left, .footer-right {
+    width: 100%;
+  }
+}
+
+@media (max-width: 520px) {
+
+  .hero-title {
+    font-size: 34px;
+  }
+
+  .scroll-down svg {
+    width: 34px;
+  }
+
+  .filter-btn {
+    padding: 8px 18px;
+  }
+
+  .proker-card {
+    height: 180px;
+  }
+
+}
