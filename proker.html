@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Program Kerja HMTI UMP</title>
+
+  <link rel="icon" href="images/HMTI.png" />
+  <link rel="stylesheet" href="Styles/proker.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<header class="navbar">
+    <div class="nav-container">
+
+        <!-- LEFT LOGO -->
+        <div class="nav-left">
+            <img src="images/HMTI.png" alt="HMTI UMP" class="nav-logo-img">
+            <span class="nav-logo-text">HMTI UMP</span>
+        </div>
+
+        <!-- CENTER MENU -->
+        <nav class="nav-center">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#members" class="nav-link">Members</a>
+            <a href="#proker" class="nav-link active">Proker</a>
+            <a href="#studyclub" class="nav-link">StudyClub</a>
+            <a href="#aspiration" class="nav-link">Aspiration</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<!-- =========================================================
+     HERO SECTION
+========================================================= -->
+<section id="proker" class="hero">
+  <div class="hero-inner">
+
+    <span class="chip">Program Kerja</span>
+
+    <h1 class="hero-title">
+      <span style="color:#F2B705;">Program</span>
+      <span style="color:white;">Kerja</span> HMTI UMP
+    </h1>
+
+    <p class="hero-desc">
+      Jelajahi berbagai program kerja inspiratif dari setiap departemen HMTI.
+    </p>
+
+    <a href="#list-proker" class="scroll-down" aria-label="scroll">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </a>
+
+  </div>
+</section>
+
+
+
+<!-- =========================================================
+     PROKER SECTION
+========================================================= -->
+<section id="list-proker" class="proker-section">
+
+    <h1 class="proker-title">
+        <span class="blue">Proker</span> HMTI UMP
+    </h1>
+
+    <p class="proker-subtitle">
+        Berbagai program kerja yang telah dan akan dilaksanakan oleh HMTI.
+    </p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="proker-filters">
+        <button class="filter-btn active" data-filter="SEMUA">SEMUA</button>
+        <button class="filter-btn" data-filter="BPH">BPH</button>
+        <button class="filter-btn" data-filter="RISTEK">RISTEK</button>
+        <button class="filter-btn" data-filter="HUMAS">HUMAS</button>
+        <button class="filter-btn" data-filter="PSDM">PSDM</button>
+        <button class="filter-btn" data-filter="EKRAF">EKRAF</button>
+        <button class="filter-btn" data-filter="KOMINFO">KOMINFO</button>
+        <button class="filter-btn" data-filter="ADVO">ADVO</button>
+    </div>
+
+    <!-- PROKER CARDS -->
+    <div class="proker-cards">
+
+    <!-- Card kosong / gambar tidak tersedia -->
+    <div class="proker-card" data-dept="BPH" data-img="images/monev.jpg">
+        <a href="detail_proker.html?dept=BPH" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card" data-dept="RISTEK" data-img="images/webdev.jpg">
+        <a href="detail_proker.html?dept=RISTEK" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card hidden-card" data-dept="HUMAS" data-img="images/proker/humas.jpg">
+        <a href="detail_proker.html?dept=HUMAS" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card hidden-card" data-dept="PSDM" data-img="images/proker/psdm.jpg">
+        <a href="detail_proker.html?dept=PSDM" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card hidden-card" data-dept="EKRAF" data-img="images/proker/ekraf.jpg">
+        <a href="detail_proker.html?dept=EKRAF" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card hidden-card" data-dept="KOMINFO" data-img="images/proker/kominfo.jpg">
+        <a href="detail_proker.html?dept=KOMINFO" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+    <div class="proker-card hidden-card" data-dept="ADVO" data-img="images/proker/advo.jpg">
+        <a href="detail_proker.html?dept=ADVO" class="card-detail">Lihat detail ▢</a>
+    </div>
+
+</div>
+
+
+    <!-- BUTTON LOAD MORE -->
+    <div class="more-wrapper">
+        <button class="btn-more">Lihat Program Lainnya</button>
+        <button class="btn-less hidden-less">Lebih Sedikit</button>
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+
+    <div class="footer-container">
+
+        <!-- LEFT SECTION -->
+        <div class="footer-left">
+            <div class="footer-brand">
+                <img src="images/HMTI.png" alt="Logo HMTI">
+                <div>
+                    <h2>HMTI UMP</h2>
+                    <p class="tagline">Kreativitas • Teknologi • Inovasi</p>
+                </div>
+            </div>
+
+            <p class="footer-description">
+                Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains 
+                Universitas Muhammadiyah Purwokerto – Wadah kreativitas, inovasi, 
+                dan pengembangan diri mahasiswa teknik informatika.
+            </p>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. KH. Ahmad Dahlan, Purwokerto, Jawa Tengah 53182</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hmti@ump.ac.id</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>+62 822-5770-0291</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU CARD -->
+        <div class="footer-card">
+            <h3>Navigasi</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Member</a></li>
+                <li><a href="#">Proker</a></li>
+                <li><a href="#">Studyclub</a></li>
+                <li><a href="#">Aspirasi</a></li>
+            </ul>
+        </div>
+
+        <!-- INFO CARD -->
+        <div class="footer-card">
+            <h3>Informasi</h3>
+            <ul>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="footer-social">
+        <div class="social-box"><i class="fa-brands fa-instagram"></i></div>
+        <div class="social-box"><i class="fa-brands fa-github"></i></div>
+        <div class="social-box"><i class="fa-brands fa-linkedin"></i></div>
+        <div class="social-box"><i class="fa-brands fa-twitter"></i></div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 HMTI UMP. Made with ❤️ by HMTI Ristek
+    </div>
+
+</footer>
+
+
+
+<script>
+/* =========================================================
+   AUTO SET BACKGROUND IMAGE
+========================================================= */
+document.querySelectorAll(".proker-card").forEach(card => {
+    const img = card.dataset.img;
+    if (img) {
+        card.style.backgroundImage = `url('${img}')`;
+        card.style.backgroundSize = "cover";
+        card.style.backgroundPosition = "center";
+        card.style.backgroundRepeat = "no-repeat";
+    }
+});
+
+
+/* =========================================================
+   FILTER PROKER
+========================================================= */
+const filterBtns = document.querySelectorAll(".filter-btn");
+const cards = document.querySelectorAll(".proker-card");
+const btnMore = document.querySelector(".btn-more");
+const btnLess = document.querySelector(".btn-less");
+
+filterBtns.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        filterBtns.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const filter = btn.dataset.filter;
+
+        // reset tombol
+        btnMore.style.display = "inline-block";
+        btnLess.classList.add("hidden-less");
+
+        cards.forEach(card => {
+            const dept = card.dataset.dept;
+
+            if (filter === "SEMUA") {
+                card.classList.remove("hidden-card");
+                card.classList.add("fade-card");
+                return;
+            }
+
+            if (dept === filter) {
+                card.classList.remove("hidden-card");
+                card.classList.add("fade-card");
+            } else {
+                card.classList.add("hidden-card");
+            }
+        });
+    });
+});
+
+
+/* =========================================================
+   LOAD MORE & SHOW LESS
+========================================================= */
+const allCards = document.querySelectorAll(".proker-card");
+
+function showMoreCards() {
+    let revealed = 0;
+
+    allCards.forEach(card => {
+        if (card.classList.contains("hidden-card") && revealed < 2) {
+            card.classList.remove("hidden-card");
+            card.classList.add("fade-card");
+            revealed++;
+        }
+    });
+
+    const stillHidden = document.querySelectorAll(".proker-card.hidden-card").length;
+
+    if (stillHidden === 0) {
+        btnMore.style.display = "none";
+        btnLess.classList.remove("hidden-less");
+    }
+}
+
+btnMore.addEventListener("click", showMoreCards);
+
+
+// tombol "Lebih Sedikit"
+btnLess.addEventListener("click", () => {
+
+    // sembunyikan setelah index 1 (hanya 2 pertama yang tampil)
+    allCards.forEach((card, index) => {
+        if (index > 1) {
+            card.classList.add("hidden-card");
+        }
+    });
+
+    // tampilkan kembali tombol MORE
+    btnMore.style.display = "inline-block";
+
+    // sembunyikan tombol LESS
+    btnLess.classList.add("hidden-less");
+
+    // scroll balik ke bagian card
+    document.querySelector("#list-proker").scrollIntoView({
+        behavior: "smooth"
+    });
+});
+
+
+/* =========================================================
+   ANIMATION CLASS
+========================================================= */
+const style = document.createElement("style");
+style.innerHTML = `
+.fade-card {
+    animation: fadeIn 0.5s ease;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.hidden-card {
+    display: none !important;
+}
+`;
+document.head.appendChild(style);
+
+</script>
+
+
+</body>
+</html>
