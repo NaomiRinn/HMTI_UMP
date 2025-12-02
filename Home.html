@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTI UMP - Himpunan Mahasiswa Teknik Informatika</title>
+    <link rel="icon" href="images/HMTI.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Roboto:wght@600&family=Prompt:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Prompt', sans-serif;
+            background: linear-gradient(to bottom, #DBEAFE, #93C5FD);
+            min-height: 100vh;
+        }
+
+        /* =========================================================
+           NAVBAR
+        ========================================================= */
+        .navbar {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-left {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .nav-logo-img {
+            width: 40px;
+            height: 40px;
+            background: #FBBF24;
+            border-radius: 8px;
+            padding: 8px;
+        }
+
+        .nav-logo-text {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #1F2937;
+        }
+
+        .nav-center {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: #4B5563;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2563EB;
+        }
+
+        /* =========================================================
+           HERO IMAGE SECTION
+        ========================================================= */
+        .hero-image-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .hero-image {
+            background: linear-gradient(135deg, #6B7280, #9CA3AF);
+            border-radius: 3rem;
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* =========================================================
+           THREE CARDS SECTION
+        ========================================================= */
+        .three-cards-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 0 2rem;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .info-card {
+            background: #312E81;
+            border-radius: 2rem;
+            padding: 6.5rem 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+        }
+
+        .info-card h3 {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 400;
+        }
+
+        /* =========================================================
+           ABOUT SECTION
+        ========================================================= */
+        .about-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            border-top: 2px solid #9CA3AF;
+        }
+
+        .about-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 500;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+        }
+
+        .about-title .blue {
+            color: #3B82F6;
+        }
+
+        .about-title .dark {
+            color: #1F2937;
+        }
+
+        .about-description {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .about-boxes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem 4rem;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .about-box {
+            background: #312E81;
+            border-radius: 2rem;
+            padding: 6rem 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        /* =========================================================
+           LARGE SPACE SECTION
+        ========================================================= */
+        .large-space-section {
+            max-width: 1200px;
+            margin: 3rem auto;
+            padding: 3rem 2rem;
+            border-top: 2px solid #9CA3AF;
+        }
+
+        .large-space {
+            height: 400px;
+            background: linear-gradient(to bottom, #BFDBFE, #93C5FD);
+            border-radius: 1rem;
+        }
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+        .footer {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding: 3rem 2rem;
+            border-top: 2px solid #9CA3AF;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-left .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-brand img {
+            width: 50px;
+            height: 50px;
+            background: #FBBF24;
+            border-radius: 12px;
+            padding: 10px;
+        }
+
+        .footer-brand h2 {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: #1F2937;
+        }
+
+        .footer-brand .tagline {
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+
+        .footer-description {
+            color: #4B5563;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .icon-box {
+            width: 40px;
+            height: 40px;
+            background: #312E81;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .info-item h4 {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #1F2937;
+            margin-bottom: 0.25rem;
+        }
+
+        .info-item p {
+            font-size: 0.875rem;
+            color: #6B7280;
+        }
+
+        .footer-card {
+            background: #312E81;
+            border-radius: 1.5rem;
+            padding: 2rem;
+        }
+
+        .footer-card h3 {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-card ul {
+            list-style: none;
+        }
+
+        .footer-card ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-card ul li a {
+            color: #D1D5DB;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-card ul li a:hover {
+            color: white;
+        }
+
+        .footer-card ul li a::before {
+            content: "» ";
+        }
+
+        .footer-social {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .social-box {
+            width: 50px;
+            height: 50px;
+            background: #312E81;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.25rem;
+            cursor: pointer;
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .social-box:hover {
+            transform: translateY(-5px);
+            background: #3B82F6;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            color: #4B5563;
+            font-weight: 500;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-title {
+                font-size: 2rem;
+            }
+
+            .about-boxes {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- =========================================================
+     NAVBAR
+========================================================= -->
+<header class="navbar">
+    <div class="nav-container">
+        <!-- LEFT LOGO -->
+        <div class="nav-left">
+            <img src="images/HMTI.png" alt="HMTI UMP" class="nav-logo-img">
+            <span class="nav-logo-text">HMTI UMP</span>
+        </div>
+
+        <!-- CENTER MENU -->
+        <nav class="nav-center">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About Us</a>
+            <a href="#members" class="nav-link">Members</a>
+            <a href="#proker" class="nav-link">Proker</a>
+            <a href="#studyclub" class="nav-link">StudyClub</a>
+            <a href="#aspiration" class="nav-link">Aspiration</a>
+        </nav>
+    </div>
+</header>
+
+<!-- =========================================================
+     HERO IMAGE SECTION
+========================================================= -->
+<section class="hero-image-section">
+    <div class="hero-image">
+        <!-- Placeholder untuk foto grup -->
+        <span style="color: #fff; font-size: 1.25rem;">Group Photo</span>
+    </div>
+</section>
+
+<!-- =========================================================
+     THREE CARDS SECTION
+========================================================= -->
+<section class="three-cards-section">
+    <div class="cards-grid">
+        <div class="info-card">
+            <h3>Member</h3>
+        </div>
+        <div class="info-card">
+            <h3>Departement</h3>
+        </div>
+        <div class="info-card">
+            <h3>Program</h3>
+        </div>
+    </div>
+</section>
+
+<!-- =========================================================
+     ABOUT SECTION
+========================================================= -->
+<section id="about" class="about-section">
+    <h1 class="about-title">
+        <span class="blue">About</span>
+        <span class="dark"> HMTI</span>
+    </h1>
+
+    <p class="about-description">
+        Himpunan Mahasiswa Informatika adalah sebuah Organisasi Kemahasiswaan khusus Jurusan Teknik Informatika yang bergerak dalam bidang Akademik maupun Non-Akademik yang dapat menjadi wadah bagi para Mahasiswa Jurusan Teknik Informatika.
+    </p>
+
+    <!-- FOUR BOXES -->
+    <div class="about-boxes">
+        <div class="about-box"></div>
+        <div class="about-box"></div>
+        <div class="about-box"></div>
+        <div class="about-box"></div>
+    </div>
+</section>
+
+<!-- =========================================================
+     LARGE SPACE SECTION
+========================================================= -->
+<section class="large-space-section">
+    <div class="large-space"></div>
+</section>
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+<footer class="footer">
+    <div class="footer-container">
+
+        <!-- LEFT SECTION -->
+        <div class="footer-left">
+            <div class="footer-brand">
+                <img src="images/HMTI.png" alt="Logo HMTI">
+                <div>
+                    <h2>HMTI UMP</h2>
+                    <p class="tagline">Kreativitas • Teknologi • Inovasi</p>
+                </div>
+            </div>
+
+            <p class="footer-description">
+                Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains 
+                Universitas Muhammadiyah Purwokerto – Wadah kreativitas, inovasi, 
+                dan pengembangan diri mahasiswa teknik informatika.
+            </p>
+
+            <div class="contact-info">
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <h4>Alamat</h4>
+                        <p>Jl. KH. Ahmad Dahlan, Purwokerto, Jawa Tengah 53182</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <h4>Email</h4>
+                        <p>hmti@ump.ac.id</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="icon-box"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <h4>Telepon</h4>
+                        <p>+62 822-5770-0291</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MENU CARD -->
+        <div class="footer-card">
+            <h3>Navigasi</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Member</a></li>
+                <li><a href="#">Proker</a></li>
+                <li><a href="#">Studyclub</a></li>
+                <li><a href="#">Aspirasi</a></li>
+            </ul>
+        </div>
+
+        <!-- INFO CARD -->
+        <div class="footer-card">
+            <h3>Informasi</h3>
+            <ul>
+                <li><a href="#">Testimonials</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!-- SOCIAL ICONS -->
+    <div class="footer-social">
+        <div class="social-box"><i class="fa-brands fa-instagram"></i></div>
+        <div class="social-box"><i class="fa-brands fa-github"></i></div>
+        <div class="social-box"><i class="fa-brands fa-linkedin"></i></div>
+        <div class="social-box"><i class="fa-brands fa-twitter"></i></div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2025 HMTI UMP. Made with ❤️ by HMTI Ristek
+    </div>
+</footer>
+
+</body>
+</html>
