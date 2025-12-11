@@ -1,203 +1,290 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>HMTI UMP</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
-  <link rel="icon" href="images/Logo HMTI_20250809_192857_0000.png" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HMTI UMP - Our Department</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+    
 </head>
-<body class="min-h-screen bg-gradient-to-b from-white to-sky-100 text-slate-900 antialiased">
+<body>
 
-  <!-- NAVBAR -->
-  <header class="bg-white/70 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <img src="images/Logo HMTI_20250809_192857_0000.png" alt="HMTI UMP" class="w-10 h-10 rounded-full">
-        <div class="font-semibold">HMTI UMP</div>
-      </div>
-
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#home" class="hover:text-sky-700">Home</a>
-        <a href="#about" class="hover:text-sky-700">About</a>
-        <a href="#member" class="hover:text-sky-700">Member</a>
-        <a href="#proker" class="hover:text-sky-700">Proker</a>
-        <a href="#studyclub" class="hover:text-sky-700">StudyClub</a>
-        <a href="#aspiration" class="hover:text-sky-700">Aspiration</a>
-      </nav>
-
-      <a href="#contact" class="hidden md:block px-4 py-2 rounded-full bg-sky-700 text-white text-sm hover:brightness-95">Bergabung</a>
-
-      <button class="md:hidden p-2">
-        <svg width="24" height="24" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M3 6h18M3 12h18M3 18h18"/>
-        </svg>
-      </button>
-    </div>
-  </header>
-
-  <main class="max-w-6xl mx-auto px-6 py-10" id="home">
-    <!-- HERO -->
-    <section class="mb-12">
-      <div class="rounded-xl overflow-hidden shadow-lg">
-        <img src="images/WhatsApp Image 2025-10-08 at 10.29.45_82c96c75.jpg" alt="HMTI Team" class="w-full h-56 md:h-80 object-cover">
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-6">
-        <div class="bg-sky-800 text-white rounded-2xl p-6 shadow-lg">
-          <h4 class="text-lg font-semibold mb-1">Member</h4>
-          <p class="text-sm text-sky-100">Informasi keanggotaan</p>
+    <header>
+        <div class="logo">
+            <img src="image/Logo HMTI_20250809_192857_0000.png" alt="Logo HMTI UMP"> <span>HMTI UMP</span>
         </div>
-        <div class="bg-sky-800 text-white rounded-2xl p-6 shadow-lg">
-          <h4 class="text-lg font-semibold mb-1">Departement</h4>
-          <p class="text-sm text-sky-100">Divisi dan struktur</p>
-        </div>
-        <div class="bg-sky-800 text-white rounded-2xl p-6 shadow-lg">
-          <h4 class="text-lg font-semibold mb-1">Program</h4>
-          <p class="text-sm text-sky-100">Kegiatan & Proker</p>
-        </div>
-      </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Members</a></li>
+                <li><a href="#">Article</a></li>
+                <li><a href="#">StudyClub</a></li>
+                <li><a href="#">Application</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero-banner">
     </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="bg-white/60 rounded-2xl p-6 md:p-10 shadow-inner mb-12">
-      <div class="text-center mb-6">
-        <h2 class="text-3xl md:text-4xl font-semibold text-sky-800">About HMTI</h2>
-        <hr class="border-sky-200 my-4 w-24 mx-auto">
-        <p class="max-w-3xl mx-auto text-sm md:text-base text-slate-700">
-          Himpunan Mahasiswa Informatika adalah Organisasi Kemahasiswaan Jurusan Teknik Informatika yang bergerak dalam bidang akademik dan non-akademik.
-        </p>
-      </div>
-
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 1</div>
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 2</div>
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 3</div>
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 4</div>
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 5</div>
-        <div class="bg-sky-800 rounded-xl p-6 text-white">Judul 6</div>
-      </div>
-    </section>
-
-    <!-- SERVICES -->
-    <section id="member" class="mb-12">
-      <div class="md:flex md:items-center md:justify-between mb-6">
-        <h3 class="text-2xl font-semibold">Services & Activities</h3>
-        <p class="text-sm text-slate-600">Seminar, pelatihan, study club, dan program rutin kami.</p>
-      </div>
-
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <div class="bg-white rounded-xl p-5 shadow-md border">
-          <h5 class="font-semibold mb-1">Seminar & Workshop</h5>
-          <p class="text-sm text-slate-600">Event bulanan untuk pengembangan skill.</p>
-        </div>
-        <div class="bg-white rounded-xl p-5 shadow-md border">
-          <h5 class="font-semibold mb-1">Pengembangan Kompetensi</h5>
-          <p class="text-sm text-slate-600">Pelatihan teknis dan non-teknis.</p>
-        </div>
-        <div class="bg-white rounded-xl p-5 shadow-md border">
-          <h5 class="font-semibold mb-1">Riset & Proyek</h5>
-          <p class="text-sm text-slate-600">Dukungan untuk karya ilmiah dan riset.</p>
-        </div>
-        <div class="bg-white rounded-xl p-5 shadow-md border">
-          <h5 class="font-semibold mb-1">Kolaborasi</h5>
-          <p class="text-sm text-slate-600">Kerja sama lintas organisasi dan fakultas.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="bg-white/70 rounded-2xl p-6 md:p-10 mb-12 shadow-sm">
-      <div class="md:flex md:gap-8">
-        <div class="md:w-1/2">
-          <h3 class="text-2xl font-semibold mb-2">Hubungi Kami</h3>
-          <p class="text-sm text-slate-600 mb-6">Ada pertanyaan atau ingin bergabung? Isi form atau hubungi kontak kami.</p>
-
-          <div class="space-y-3 text-sm">
-            <p><strong>Alamat:</strong> Jl. KH. Ahmad Dahlan, Purwokerto, Banyumas, Jawa Tengah 53182</p>
-            <p><strong>Email:</strong> hmti@ump.ac.id</p>
-            <p><strong>Telepon:</strong> +62 822-5770-0291</p>
-          </div>
-        </div>
-
-        <div class="md:w-1/2 mt-6 md:mt-0">
-          <form action="https://formspree.io/f/your-form-id" method="POST" class="grid grid-cols-1 gap-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <input name="name" required placeholder="Nama" class="px-4 py-2 rounded-lg border border-slate-200">
-              <input name="email" required placeholder="Email" type="email" class="px-4 py-2 rounded-lg border border-slate-200">
-            </div>
-
-            <input name="subject" placeholder="Subjek" class="px-4 py-2 rounded-lg border border-slate-200">
-            <textarea name="message" rows="5" placeholder="Pesan" class="px-4 py-2 rounded-lg border border-slate-200"></textarea>
-
-            <div class="flex justify-end">
-              <button type="submit" class="px-5 py-2 rounded-full bg-sky-700 text-white hover:brightness-95">Kirim Pesan</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <!-- Brand & Contact Info -->
-                <div class="footer-brand">
-                    <div class="footer-logo-text">HMTI UMP</div>
-                    <p class="footer-description">
-                        Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains Universitas Muhammadiyah Purwokerto
-                    </p>
-                    
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-label">Alamat</span>
-                            <span class="contact-detail">Jl. Kh. Ahmad Dahlan, Purwokerto, Banyumas, Jawa Tengah 53182</span>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-label">Email</span>
-                            <span class="contact-detail">hmti@ump.ac.id</span>
-                        </div>
-                        
-                        <div class="contact-item">
-                            <span class="contact-label">Telepon</span>
-                            <span class="contact-detail">+62 281-4770-5291</span>
-                        </div>
-                    </div>
+    <section class="explore-section">
+        <div class="container">
+            <h2 class="section-title">Eksplore <span class="highlight">Our Department</span></h2>
+            <p class="section-description">
+                Temukan berbagai departemen dan divisi yang ada di HMTI UMP, masing-masing dengan fokus dan program unggulan yang berbeda untuk pengembangan Mahasiswa Teknik Informatika.
+            </p>
+            <div class="departments-grid">
+                
+                <div class="department-card" data-department-id="bph">
+                    <img src="image/business.png" alt="Dept. BPH" class="dept-image">
+                    <p class="dept-name">BPH</p>
                 </div>
                 
-                <!-- Navigation & FYI -->
-                <div class="footer-navigation">
-                    <div class="nav-section">
-                        <h4 class="nav-title">Navigasi</h4>
-                        <ul class="nav-list">
-                            <li class="nav-item">Home</li>
-                            <li class="nav-item">About</li>
-                            <li class="nav-item">Member</li>
-                            <li class="nav-item">Proker</li>
-                            <li class="nav-item">StudyClub</li>
-                            <li class="nav-item">Aspiration</li>
-                        </ul>
-                    </div>
-                    
-                    <div class="fyi-section">
-                        <h4 class="fyi-title">FYI</h4>
-                        <ul class="fyi-list">
-                            <li class="fyi-item">FAQ</li>
-                            <li class="fyi-item">Testimonials</li>
-                        </ul>
+                <div class="department-card" data-department-id="ristek">
+                    <img src="image/data.png" alt="Dept. RisTek" class="dept-image">
+                    <p class="dept-name">Ristek (Riset dan Teknologi)</p>
+                </div>
+
+                <div class="department-card" data-department-id="humas">
+                    <img src="image/public-relation.png" alt="Dept. Humas" class="dept-image">
+                    <p class="dept-name">Humas</p>
+                </div>
+                
+                <div class="department-card" data-department-id="psdm">
+                    <img src="image/resource-allocation.png" alt="Dept. PSDM" class="dept-image">
+                    <p class="dept-name">PSDM</p>
+                </div>
+
+                <div class="department-card" data-department-id="ekraf">
+                    <img src="image/store.png" alt="Dept. Ekraf" class="dept-image">
+                    <p class="dept-name">Ekraf</p>
+                </div>
+
+                <div class="department-card" data-department-id="kominfo">
+                    <img src="image/camera.png" alt="Dept. Kominfo" class="dept-image">
+                    <p class="dept-name">Kominfo</p>
+                </div>
+                
+                <div class="department-card full-width" data-department-id="advokasi">
+                    <img src="image/email (1).png" alt="Dept. Advokasi" class="dept-image">
+                    <p class="dept-name">Advokasi</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="members-section">
+        <button class="members-button">Members</button>
+        <div class="member-slider" id="member-slider"> 
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content container">
+            <div class="footer-brand-new">
+                <div class="brand-title">
+                    <img src="image/Logo HMTI_20250809_192857_0000.png" alt="Logo HMTI UMP"> <span>HMTI UMP</span>
+                </div>
+                <p class="tagline">Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains Universitas Muhammadiyah Purwokerto</p>
+
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span class="contact-label">Alamat</span>
+                        <p>Jl. KH. Ahmad Dahlan, Purwokerto, Banyumas, Jawa Tengah 53182</p>
                     </div>
                 </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span class="contact-label">Email</span>
+                        <p>hmti@ump.ac.id</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <div>
+                        <span class="contact-label">Telepon</span>
+                        <p>+62 822-5770-0291</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-box blue-box">
+                <h3>Navigasi</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Member</a></li>
+                    <li><a href="#">Proker</a></li>
+                    <li><a href="#">StudyClub</a></li>
+                    <li><a href="#">Aspiration</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-box blue-box">
+                <h3>FYI</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                </ul>
             </div>
         </div>
 
         <div class="footer-bottom">
-            <div class="footer-copyright">
-                © 2025 HMTI UMP. Made by HMTI Ristek
-            </div>
+            <p>© 2025 HMTI UMP. Made by HMTI RisTek</p>
         </div>
     </footer>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <script type="text/javascript">
+    
+    // 1. SIMULASI DATA ANGGOTA BERDASARKAN DEPARTEMEN
+    const departmentsData = {
+        'bph': [
+            // Contoh Anggota BPH (Ketua Himpunan)
+            { 
+                name: "M. Fattahul Aziz", 
+                role: "Ketua Himpunan", 
+                class: "REG B 2023", 
+                photo: "image/WhatsApp_Image_2025-11-20_at_17.41.12_808fec7b-removebg-preview.png",
+                type: 'custom' 
+            },
+            { name: "Ayu S.W.", role: "Sekretaris I", photo: "image/WhatsApp_Image_2025-11-20_at_17.41.12_808fec7b-removebg-preview.png", type: 'custom' },
+            { name: "Dion P.", role: "Bendahara I", photo: "image/WhatsApp_Image_2025-11-20_at_17.41.12_808fec7b-removebg-preview.png", type: 'custom' }
+        ],
+        'ristek': [
+            // Contoh Anggota Ristek
+            { name: "Sufyan A.", role: "Koordinator Riset", photo: "images/person3.jpg", type: 'custom' },
+            { name: "Andi R.", role: "Staf IT Dev", photo: "images/person4.jpg", type: 'custom' },
+            { name: "Rina F.", role: "Staf Data", photo: "images/person5.jpg", type: 'custom' },
+        ],
+        'humas': [
+            // Contoh Anggota Humas
+            { name: "Nia K.", role: "Koordinator Relasi", photo: "images/person6.jpg", type: 'custom' },
+            { name: "Bima T.", role: "Staf Eksternal", photo: "images/person7.jpg", type: 'custom' }
+        ],
+        'psdm': [
+            // Contoh Anggota PSDM
+            { name: "Fajar W.", role: "Koordinator PSDM", photo: "images/person8.jpg", type: 'custom' },
+            { name: "Lia A.", role: "Staf Kaderisasi", photo: "images/person9.jpg", type: 'custom' }
+        ],
+        'ekraf': [
+            // Contoh Anggota Ekraf
+            { name: "Siska M.", role: "Koordinator Bisnis", photo: "images/person10.jpg", type: 'custom' },
+            { name: "Yoga D.", role: "Staf Logistik", photo: "images/person11.jpg", type: 'custom' }
+        ],
+        'kominfo': [
+            // Contoh Anggota Kominfo
+            { name: "Gilang P.", role: "Koordinator Multimedia", photo: "images/person12.jpg", type: 'custom' },
+            { name: "Tika R.", role: "Staf Media Sosial", photo: "images/person13.jpg", type: 'custom' }
+        ],
+        'advokasi': [
+             // Contoh Anggota Advokasi
+            { name: "Rizky D.", role: "Kepala Advokasi", photo: "images/person14.jpg", type: 'custom' },
+            { name: "Wina J.", role: "Staf Konsultasi", photo: "images/person15.jpg", type: 'custom' }
+        ]
+    };
+
+    // Fungsi untuk me-render HTML anggota
+    function renderMemberCard(member) {
+        if (member.type === 'custom') {
+            // Render untuk Ketua Himpunan (member-card-custom)
+            return `
+                <div class="member-card-custom">
+                    <div class="photo-wrapper">
+                        <img src="${member.photo}" alt="${member.name}">
+                    </div>
+                    <h3 class="member-name">${member.name}</h3>
+                    <p class="member-role">${member.role}</p>
+                    <p class="member-class">${member.class || ''}</p>
+                    <div class="member-icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                </div>
+            `;
+        } else {
+            // Render untuk Anggota Default (member-card)
+            return `
+                <div class="member-card">
+                    <img src="${member.photo}" alt="${member.name}" class="member-photo">
+                    <div class="member-info">
+                        <h4>${member.name}</h4>
+                        <p>${member.role}</p>
+                    </div>
+                </div>
+            `;
+        }
+    }
+
+    // Fungsi utama untuk memuat dan menginisialisasi slider
+    function loadMembers(departmentId) {
+        const $slider = $('#member-slider');
+        const members = departmentsData[departmentId] || [];
+        let htmlContent = '';
+
+        members.forEach(member => {
+            htmlContent += renderMemberCard(member);
+        });
+
+        // 1. Hancurkan Slick Carousel yang lama (jika ada)
+        if ($slider.hasClass('slick-initialized')) {
+            $slider.slick('unslick');
+        }
+
+        // 2. Kosongkan dan masukkan konten baru
+        $slider.empty().html(htmlContent);
+
+        // 3. Inisialisasi Slick Carousel lagi dengan konten baru
+        $slider.slick({
+            autoplay: true,
+            autoplaySpeed: 3000,
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            arrows: true,
+            responsive: [
+                { breakpoint: 1024, settings: { slidesToShow: 3 } },
+                { breakpoint: 600, settings: { slidesToShow: 2 } },
+                { breakpoint: 480, settings: { slidesToShow: 1 } }
+            ]
+        });
+    }
+
+
+    $(document).ready(function(){
+        // TAMPILKAN BPH SAAT HALAMAN DIMUAT PERTAMA KALI
+        loadMembers('bph'); 
+        $('[data-department-id="bph"]').addClass('active-dept');
+
+        // Event Listener untuk Kartu Departemen
+        $('.department-card').on('click', function() {
+            const selectedDept = $(this).data('department-id');
+            
+            // Atur kelas aktif visual
+            $('.department-card').removeClass('active-dept');
+            $(this).addClass('active-dept');
+
+            // Muat anggota baru
+            loadMembers(selectedDept);
+        });
+    });
+    </script>
+
 </body>
 </html>
