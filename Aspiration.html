@@ -1,169 +1,438 @@
 <!DOCTYPE html>
 <html lang="id">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HMTI UMP - Aspirasi</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aspirasi HMTI UMP</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/HMTI.png" />
+    
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="Styles/Style.css">
+    <link rel="stylesheet" href="Styles/Header.css">
+    <link rel="stylesheet" href="Styles/Footer.css">
+    <link rel="stylesheet" href="Styles/Aspiration.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="styles/aspiration.css">
+    
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    
+    <style>
+        /* INLINE STYLE UNTUK OVERRIDE JIKA PERLU */
+        .mobile-menu-btn {
+            display: none !important;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: flex !important;
+            }
+            
+            .desktop-nav {
+                display: none !important;
+            }
+        }
+        
+        /* Pastikan body punya padding untuk fixed header */
+        body {
+            padding-top: 80px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding-top: 70px;
+            }
+        }
+    </style>
 </head>
 
-<body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <img src="images/Logo HMTI_20250809_192857_0000.png" alt="HMTI UMP" class="logo-img">
-                <div class="logo-text">HMTI UMP</div>
+<body data-theme="dark">
+
+    <!-- Placeholder untuk Header -->
+    <div id="header-container"></div>
+
+    <!-- HERO SECTION -->
+    <section id="aspirasi" class="hero aspirasi-hero">
+        <div class="hero-inner">
+            <div class="hero-badge">
+                <span class="badge-text">Aspirasi & Saran</span>
             </div>
 
-            <nav class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#member" class="nav-link">Member</a>
-                <a href="#proker" class="nav-link">Proker</a>
-                <a href="#studyclub" class="nav-link">StudyClub</a>
-                <a href="#aspiration" class="nav-link active">Aspiration</a>
-            </nav>
+            <h1 class="hero-title">
+                <span class="title-yellow">Aspirasi HMTI UMP</span>
+            </h1>
 
-            <a href="#contact" class="nav-cta">Bergabung</a>
+            <div class="hero-subtitle">
+                <span class="subtitle-text">Sampaikan Aspirasi Anda</span>
+            </div>
 
-            <button class="nav-toggle">
-                <svg width="24" height="24" fill="none" stroke="#0f172a" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round">
-                    <path d="M3 6h18M3 12h18M3 18h18" />
+            <p class="hero-desc">
+                Suara Anda penting bagi perkembangan HMTI UMP. Sampaikan aspirasi, kritik, dan saran untuk kemajuan bersama.
+            </p>
+
+            <a href="#form-aspirasi" class="scroll-down" aria-label="scroll">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                 </svg>
-            </button>
+            </a>
         </div>
-    </header>
+    </section>
 
-    <!-- Main Content -->
-    <main class="main-content">
-        <div class="aspiration-container">
-            <!-- Card Container -->
-            <div class="aspiration-card">
-                <!-- Header -->
-                <div class="aspiration-header">
-                    <h1 class="aspiration-title">Sampaikan Aspirasi Anda</h1>
-                    <p class="aspiration-subtitle">Suara Anda penting bagi kemajuan HMTI UMP</p>
+    <!-- ASPIRASI FORM SECTION -->
+    <section id="form-aspirasi" class="aspirasi-section">
+        <div class="aspirasi-container">
+            <!-- FORM CARD -->
+            <div class="aspirasi-card">
+                <div class="aspirasi-header">
+                    <h2 class="aspirasi-title">Form Aspirasi HMTI UMP</h2>
+                    <p class="aspirasi-subtitle">
+                        Setiap aspirasi akan kami tampung dan pertimbangkan untuk perbaikan HMTI
+                    </p>
                 </div>
 
-                <!-- Form -->
-                <form id="aspiration-form" class="aspiration-form">
-                    <!-- Name Field -->
+                <form id="aspirasi-form" class="aspirasi-form">
                     <div class="form-group">
-                        <label for="name" class="form-label">Nama Lengkap</label>
-                        <input type="text" id="name" class="form-input" placeholder="Masukkan nama lengkap">
+                        <label for="nama" class="form-label">
+                            <i class="fas fa-user"></i> Nama Lengkap
+                        </label>
+                        <input type="text" id="nama" class="form-input" placeholder="Masukkan nama lengkap" required>
                     </div>
 
-                    <!-- Email Field -->
                     <div class="form-group">
-                        <label for="email" class="form-label">Email</label>
-                        <input type="email" id="email" class="form-input" placeholder="contoh@email.com">
+                        <label for="email" class="form-label">
+                            <i class="fas fa-envelope"></i> Email
+                        </label>
+                        <input type="email" id="email" class="form-input" placeholder="contoh@email.com" required>
                     </div>
 
-                    <!-- Category Field -->
                     <div class="form-group">
-                        <label for="category" class="form-label">Kategori Aspirasi</label>
-                        <select id="category" class="form-input">
-                            <option value="">Pilih kategori</option>
-                            <option value="academic">Akademik</option>
-                            <option value="organization">Organisasi</option>
-                            <option value="facility">Fasilitas</option>
-                            <option value="event">Kegiatan</option>
-                            <option value="other">Lainnya</option>
+                        <label for="kategori" class="form-label">
+                            <i class="fas fa-tag"></i> Kategori Aspirasi
+                        </label>
+                        <select id="kategori" class="form-input" required>
+                            <option value="" disabled selected>Pilih kategori</option>
+                            <option value="akademik">Akademik & Kurikulum</option>
+                            <option value="organisasi">Organisasi HMTI</option>
+                            <option value="fasilitas">Fasilitas Kampus</option>
+                            <option value="proker">Program Kerja</option>
+                            <option value="studyclub">Study Club</option>
+                            <option value="lainnya">Lainnya</option>
                         </select>
                     </div>
 
-                    <!-- Message Field -->
                     <div class="form-group">
-                        <label for="message" class="form-label">Isi Aspirasi</label>
-                        <textarea id="message" rows="4" class="form-input form-textarea"
-                            placeholder="Tuliskan aspirasi Anda secara detail..."></textarea>
+                        <label for="pesan" class="form-label">
+                            <i class="fas fa-comment-alt"></i> Isi Aspirasi
+                        </label>
+                        <textarea id="pesan" class="form-textarea" rows="6"
+                            placeholder="Tuliskan aspirasi, kritik, atau saran Anda secara detail..." required></textarea>
                     </div>
 
-                    <!-- Submit Button -->
-                    <button type="submit" id="submit-btn" class="submit-btn">
-                        <i class="fas fa-paper-plane btn-icon"></i>
-                        Kirim Aspirasi
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Kirim Aspirasi
                     </button>
                 </form>
 
-                <!-- Success Message (Hidden by default) -->
-                <div id="success-message" class="success-message">
-                    <i class="fas fa-check-circle success-icon"></i>
-                    <p class="success-title">Aspirasi Anda berhasil dikirim!</p>
-                    <p class="success-text">Terima kasih atas kontribusi Anda.</p>
+                <div id="success-message" class="success-message hidden">
+                    <div class="success-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Aspirasi Berhasil Dikirim!</h3>
+                    <p>Terima kasih atas kontribusi Anda. Aspirasi Anda akan kami proses dan pertimbangkan.</p>
+                    <button id="new-aspiration" class="btn-secondary">
+                        <i class="fas fa-plus"></i> Kirim Aspirasi Lain
+                    </button>
+                </div>
+            </div>
+
+            <!-- INFO SIDE -->
+            <div class="aspirasi-info">
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3>Mengapa Aspirasi Penting?</h3>
+                    <p>Aspirasi Anda membantu kami meningkatkan kualitas pelayanan dan program HMTI untuk seluruh anggota.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Privasi Terjaga</h3>
+                    <p>Data dan identitas Anda akan kami rahasiakan. Aspirasi bisa dikirim secara anonim jika diinginkan.</p>
+                </div>
+
+                <div class="info-card">
+                    <div class="info-icon">
+                        <i class="fas fa-history"></i>
+                    </div>
+                    <h3>Proses Tindak Lanjut</h3>
+                    <p>Setiap aspirasi akan kami tinjau dalam rapat mingguan dan berikan respons maksimal 7 hari kerja.</p>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <!-- FOOTER -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-main">
-                <!-- Brand & Contact Info -->
-                <div class="footer-brand">
-                    <img src="images/Logo HMTI_20250809_192857_0000.png" alt="Logo HMTI UMP" class="footer-logo-img">
-                    <div class="footer-logo-text">HMTI UMP</div>
-                    <p class="footer-description">
-                        Himpunan Mahasiswa Teknik Informatika Fakultas Teknik dan Sains Universitas Muhammadiyah
-                        Purwokerto
-                    </p>
+    <!-- Placeholder untuk Footer -->
+    <div id="footer-container"></div>
 
-                    <div class="contact-info">
-                        <div class="contact-item">
-                            <span class="contact-label">Alamat</span>
-                            <span class="contact-detail">Jl. Kh. Ahmad Dahlan, Purwokerto, Banyumas, Jawa Tengah
-                                53182</span>
+    <!-- JavaScript -->
+    <script>
+        // Fungsi untuk load komponen
+        async function loadComponent(url, containerId) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) throw new Error(`HTTP ${response.status}`);
+                const html = await response.text();
+                document.getElementById(containerId).innerHTML = html;
+                return true;
+            } catch (error) {
+                console.error(`Error loading ${url}:`, error);
+                // Fallback
+                if (containerId === 'header-container') {
+                    document.getElementById(containerId).innerHTML = `
+                        <div style="background: #0E1C33; color: white; padding: 20px; text-align: center;">
+                            <h3>HMTI UMP - Navigation</h3>
+                            <p>Header tidak dapat dimuat. <a href="index.html" style="color: #F6B128;">Kembali ke Home</a></p>
                         </div>
+                    `;
+                }
+                return false;
+            }
+        }
 
-                        <div class="contact-item">
-                            <span class="contact-label">Email</span>
-                            <span class="contact-detail">hmti@ump.ac.id</span>
-                        </div>
+        // Load semua komponen
+        document.addEventListener('DOMContentLoaded', async function () {
+            console.log('🔄 Loading components...');
 
-                        <div class="contact-item">
-                            <span class="contact-label">Telepon</span>
-                            <span class="contact-detail">+62 281-4770-5291</span>
-                        </div>
-                    </div>
-                </div>
+            const [headerLoaded, footerLoaded] = await Promise.all([
+                loadComponent('header.html', 'header-container'),
+                loadComponent('footer.html', 'footer-container')
+            ]);
 
-                <!-- Navigation & FYI -->
-                <div class="footer-navigation">
-                    <div class="nav-section">
-                        <h4 class="nav-title">Navigasi</h4>
-                        <ul class="nav-list">
-                            <li class="nav-item">Home</li>
-                            <li class="nav-item">About</li>
-                            <li class="nav-item">Member</li>
-                            <li class="nav-item">Proker</li>
-                            <li class="nav-item">StudyClub</li>
-                            <li class="nav-item">Aspiration</li>
-                        </ul>
-                    </div>
+            if (headerLoaded && footerLoaded) {
+                console.log('✅ Components loaded successfully');
+                setTimeout(initializeComponents, 100);
+            } else {
+                console.error('❌ Failed to load some components');
+            }
+        });
 
-                    <div class="fyi-section">
-                        <h4 class="fyi-title">FYI</h4>
-                        <ul class="fyi-list">
-                            <li class="fyi-item">FAQ</li>
-                            <li class="fyi-item">Testimonials</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
+        // Initialize semua komponen setelah diload
+        function initializeComponents() {
+            console.log('⚙️ Initializing components...');
 
-        <div class="footer-bottom">
-            <div class="footer-copyright">
-                © 2025 HMTI UMP. Made by HMTI Ristek
-            </div>
-        </div>
-    </footer>
+            // 1. MOBILE MENU FUNCTIONALITY
+            setupMobileMenu();
+            
+            // 2. SET ACTIVE NAV LINKS
+            setupActiveLinks();
+            
+            // 3. FOOTER FUNCTIONALITY
+            setupFooter();
+            
+            // 4. FORM FUNCTIONALITY
+            if (document.getElementById('aspirasi-form')) {
+                initializeForm();
+            }
+            
+            // 5. SMOOTH SCROLL
+            setupSmoothScroll();
+            
+            console.log('✅ All components initialized!');
+        }
+
+        // Mobile menu setup
+        function setupMobileMenu() {
+            const menuBtn = document.getElementById('menuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+
+            if (menuBtn && mobileMenu) {
+                console.log('📱 Mobile menu elements found');
+                
+                // Toggle menu on button click
+                menuBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    mobileMenu.classList.toggle('active');
+                    
+                    // Change icon
+                    const icon = menuBtn.querySelector('i');
+                    if (icon) {
+                        icon.className = mobileMenu.classList.contains('active') 
+                            ? 'fas fa-times' 
+                            : 'fas fa-bars';
+                    }
+                });
+
+                // Close menu when clicking outside
+                document.addEventListener('click', function (e) {
+                    if (mobileMenu.classList.contains('active') &&
+                        !mobileMenu.contains(e.target) &&
+                        !menuBtn.contains(e.target)) {
+                        mobileMenu.classList.remove('active');
+                        const icon = menuBtn.querySelector('i');
+                        if (icon) icon.className = 'fas fa-bars';
+                    }
+                });
+
+                // Close menu on link click
+                mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.remove('active');
+                        const icon = menuBtn.querySelector('i');
+                        if (icon) icon.className = 'fas fa-bars';
+                    });
+                });
+            } else {
+                console.warn('⚠️ Mobile menu elements not found');
+            }
+        }
+
+        // Active links setup
+        function setupActiveLinks() {
+            const currentPage = window.location.pathname.split('/').pop();
+            console.log('Current page:', currentPage);
+
+            // Set semua link tidak aktif dulu
+            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+
+            // Set active berdasarkan halaman saat ini
+            document.querySelectorAll('.nav-link, .mobile-nav-link').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href) {
+                    if (currentPage.includes('aspirasi') || currentPage.includes('aspiration')) {
+                        if (href.includes('aspirasi') || href.includes('aspiration')) {
+                            link.classList.add('active');
+                        }
+                    } else if (href.includes(currentPage)) {
+                        link.classList.add('active');
+                    }
+                }
+            });
+        }
+
+        // Footer setup
+        function setupFooter() {
+            // Set tahun
+            const yearElement = document.getElementById('year');
+            if (yearElement) {
+                yearElement.textContent = new Date().getFullYear();
+            }
+
+            // Footer toggle function
+            window.toggleFooter = function (id) {
+                const element = document.getElementById(id);
+                if (element) {
+                    element.classList.toggle('hidden');
+                }
+            };
+        }
+
+        // Form functionality
+        function initializeForm() {
+            console.log('📝 Initializing form...');
+
+            const form = document.getElementById('aspirasi-form');
+            const successMsg = document.getElementById('success-message');
+            const newAspirationBtn = document.getElementById('new-aspiration');
+
+            if (!form || !successMsg || !newAspirationBtn) {
+                console.warn('⚠️ Form elements not found');
+                return;
+            }
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const formData = {
+                    nama: document.getElementById('nama').value,
+                    email: document.getElementById('email').value,
+                    kategori: document.getElementById('kategori').value,
+                    pesan: document.getElementById('pesan').value,
+                    timestamp: new Date().toISOString(),
+                    status: 'pending'
+                };
+
+                // Save to localStorage
+                let aspirations = JSON.parse(localStorage.getItem('hmtia_aspirations') || '[]');
+                aspirations.push(formData);
+                localStorage.setItem('hmtia_aspirations', JSON.stringify(aspirations));
+
+                // Show success message
+                successMsg.classList.remove('hidden');
+                form.classList.add('hidden');
+
+                // Reset form
+                form.reset();
+
+                console.log('📤 Form submitted successfully');
+            });
+
+            // New aspiration button
+            newAspirationBtn.addEventListener('click', function () {
+                successMsg.classList.add('hidden');
+                form.classList.remove('hidden');
+            });
+
+            // Email validation
+            const emailInput = document.getElementById('email');
+            if (emailInput) {
+                emailInput.addEventListener('blur', function () {
+                    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailPattern.test(this.value)) {
+                        this.classList.add('error');
+                    } else {
+                        this.classList.remove('error');
+                    }
+                });
+            }
+        }
+
+        // Smooth scroll setup
+        function setupSmoothScroll() {
+            const scrollDownBtn = document.querySelector('.scroll-down');
+            if (scrollDownBtn) {
+                scrollDownBtn.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector('#form-aspirasi');
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            }
+        }
+
+        // Debug viewport
+        function debugViewport() {
+            const width = window.innerWidth;
+            const mobileBtn = document.getElementById('menuBtn');
+            const desktopNav = document.querySelector('.desktop-nav');
+            
+            console.log(`📱 Viewport: ${width}px`);
+            console.log(`Mobile button display: ${mobileBtn ? getComputedStyle(mobileBtn).display : 'not found'}`);
+            console.log(`Desktop nav display: ${desktopNav ? getComputedStyle(desktopNav).display : 'not found'}`);
+        }
+
+        // Run debug on resize
+        window.addEventListener('resize', debugViewport);
+        
+        // Error handling
+        window.addEventListener('error', function (e) {
+            console.error('🚨 Global error:', e.message);
+        });
+    </script>
+
 </body>
-
 </html>
