@@ -1,291 +1,641 @@
-/* Import Font */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+/* =========================================================
+   CSS VARIABLES FOR THEME TOGGLE - WARNA PERSIS GAMBAR
+========================================================= */
+:root {
+    /* WARNA DARI GAMBAR */
+    --yellow: #F6B128;    /* Kuning/Emas persis di gambar */
+    --blue: #173969;      /* Biru tua persis di gambar */
+    --blue-light: #2D4D8C; /* Biru medium */
+    --blue-lighter: #4A6FBF; /* Biru muda */
+    --blue-gradient: linear-gradient(180deg, var(--blue) 0%, var(--blue-lighter) 100%); /* Gradasi biru */
+    
+    --dark-bg: #000000;   /* Background hitam */
+    --light-bg: #FFFFFF;  /* Background putih */
+    --gray-text: #888888; /* Text abu-abu untuk deskripsi */
+    
+    /* DARK MODE VARIABLES (DEFAULT) */
+    --primary: var(--yellow);     /* Kuning untuk "Aspirasi" */
+    --secondary: var(--blue);     /* Biru untuk badge */
+    --bg-primary: var(--dark-bg); /* Background hitam */
+    --text-primary: #FFFFFF;      /* Text putih untuk "HMTI UMP" */
+    --text-secondary: #CCCCCC;    /* Text abu-abu terang */
+    
+    /* LIGHT MODE VARIABLES */
+    --primary-light: var(--yellow);    /* Kuning tetap untuk "Aspirasi" */
+    --secondary-light: var(--blue);    /* Biru untuk badge */
+    --bg-primary-light: var(--light-bg); /* Background putih */
+    --text-primary-light: #000000;     /* Text hitam untuk "HMTI UMP" */
+    --text-secondary-light: #333333;   /* Text abu-abu gelap */
+    
+    /* DEFAULT (DARK MODE) */
+    --accent: #10B981;
+    --danger: #EF4444;
+    
+    --bg-secondary: #0A0A0A;
+    --bg-card: #111111;
+    --bg-input: #1A1A1A;
+    
+    --text-muted: var(--gray-text);
+    
+    --border-color: #333333;
+    --border-hover: #444444;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.4);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.4);
+    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
 
-/* Reset dan Base Styles */
+[data-theme="light"] {
+    /* LIGHT MODE OVERRIDES - WARNA PERSIS GAMBAR */
+    --primary: var(--primary-light);     /* Kuning untuk "Aspirasi" */
+    --secondary: var(--secondary-light); /* Biru untuk badge */
+    --bg-primary: var(--bg-primary-light); /* Background putih */
+    --text-primary: var(--text-primary-light); /* Hitam untuk "HMTI UMP" */
+    --text-secondary: var(--text-secondary-light);
+    
+    --accent: #059669;
+    
+    --bg-secondary: #F5F5F5;
+    --bg-card: #F9F9F9;
+    --bg-input: #F0F0F0;
+    
+    --text-muted: var(--gray-text);
+    
+    --border-color: #DDDDDD;
+    --border-hover: #BBBBBB;
+    
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+    --shadow-xl: 0 20px 50px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================================================
+   RESET & BASE STYLES
+========================================================= */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Inter", sans-serif;
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #ffffff;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+body.loaded * {
+    transition: all 0.3s ease;
+}
+
+/* =========================================================
+   HERO SECTION - PERSIS SEPERTI GAMBAR
+========================================================= */
+.hero {
     min-height: 100vh;
-    color: #ffffff;
-}
-
-/* Navbar Styles */
-.navbar {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(10px);
-    position: sticky;
-    top: 0;
-    z-index: 40;
-    border-bottom: 1px solid #e2e8f0;
-}
-
-.nav-container {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 4rem;
-}
-
-.nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-}
-
-.logo-img {
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
-.logo-text {
-    font-weight: 600;
-    font-size: 1.125rem;
-    color: #0f172a;
-}
-
-.nav-menu {
-    display: none;
-    align-items: center;
-    gap: 1.5rem;
-}
-
-.nav-link {
-    font-size: 0.875rem;
-    color: #475569;
-    text-decoration: none;
-    transition: color 0.2s ease;
-    position: relative;
-}
-
-.nav-link:hover {
-    color: #0369a1;
-}
-
-.nav-link.active {
-    color: #0369a1;
-    font-weight: 500;
-}
-
-.nav-link.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: #0369a1;
-    border-radius: 1px;
-}
-
-.nav-cta {
-    display: none;
-    padding: 0.5rem 1rem;
-    border-radius: 9999px;
-    background: #0369a1;
-    color: white;
-    font-size: 0.875rem;
-    text-decoration: none;
-    transition: filter 0.2s ease;
-}
-
-.nav-cta:hover {
-    filter: brightness(0.95);
-}
-
-.nav-toggle {
-    display: block;
-    padding: 0.5rem;
-    background: none;
-    border: none;
-    cursor: pointer;
-}
-
-/* Main Content */
-.main-content {
-    padding: 2rem 1rem;
-    min-height: calc(100vh - 4rem);
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-.aspiration-container {
-    width: 100%;
-    max-width: 28rem;
-}
-
-/* Card Styles */
-.aspiration-card {
-    background: white;
-    border-radius: 1rem;
-    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-    padding: 2rem;
-    border: 1px solid #e2e8f0;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.aspiration-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-/* Header Styles */
-.aspiration-header {
+    background: var(--blue-gradient); /* GRADASI BIRU */
+    padding: 120px 20px 60px;
     text-align: center;
-    margin-bottom: 2rem;
+    position: relative;
+    color: white; /* Teks putih untuk kontras dengan biru */
 }
 
-.aspiration-title {
-    font-size: 1.875rem;
-    font-weight: 700;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-    line-height: 1.2;
+.aspirasi-hero {
+    background: var(--blue-gradient); /* GRADASI BIRU */
 }
 
-.aspiration-subtitle {
-    color: #64748b;
+.hero-inner {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* Badge/Kotak kecil - PERSIS seperti di gambar */
+.hero-badge {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi transparan */
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.badge-text {
+    color: white;
     font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
 }
 
-/* Form Styles */
-.aspiration-form {
+/* Judul utama - PERSIS seperti di gambar */
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 5px;
+}
+
+/* "Aspirasi" warna kuning PERSIS seperti di gambar */
+.title-yellow {
+    color: var(--primary);
+    display: block;
+    font-size: 3.5rem;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Subtitle di bawah judul utama */
+.hero-subtitle {
+    margin-bottom: 30px;
+}
+
+.subtitle-text {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+}
+
+/* Deskripsi - PERSIS seperti di gambar */
+.hero-desc {
+    font-size: 1.125rem;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    line-height: 1.6;
+}
+
+/* Scroll indicator */
+.scroll-down {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    animation: bounce 2s infinite;
+    backdrop-filter: blur(5px);
+    background: rgba(255, 255, 255, 0.1);
+    z-index: 10;
+}
+
+.scroll-down:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    transform: translateX(-50%) translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.scroll-down svg {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    40% {
+        transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* =========================================================
+   ASPIRASI FORM SECTION
+========================================================= */
+.aspirasi-section {
+    padding: 80px 20px;
+    background-color: var(--bg-secondary);
+    position: relative;
+    z-index: 1;
+}
+
+.aspirasi-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 48px;
+    align-items: start;
+}
+
+.aspirasi-card {
+    background-color: var(--bg-card);
+    border-radius: 16px;
+    padding: 48px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+}
+
+.aspirasi-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.aspirasi-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--secondary);
+}
+
+.aspirasi-subtitle {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* =========================================================
+   FORM STYLES
+========================================================= */
+.aspirasi-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 }
 
 .form-group {
     display: flex;
     flex-direction: column;
+    gap: 8px;
 }
 
 .form-label {
-    display: block;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: #374151;
-    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+}
+
+.form-label i {
+    color: var(--secondary);
+    width: 20px;
+    text-align: center;
 }
 
 .form-input {
-    width: 100%;
-    padding: 0.75rem 1rem;
-    border: 1px solid #d1d5db;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-family: inherit;
-    transition: all 0.2s ease;
-    background: white;
+    padding: 16px 20px;
+    background-color: var(--bg-input);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    color: var(--text-primary);
+    font-size: 1rem;
+    transition: all 0.3s ease;
 }
 
 .form-input:focus {
     outline: none;
-    border-color: #0369a1;
-    box-shadow: 0 0 0 3px rgba(3, 105, 161, 0.1);
+    border-color: var(--secondary);
+    box-shadow: 0 0 0 3px rgba(23, 57, 105, 0.1);
+    background-color: var(--bg-card);
 }
 
 .form-input::placeholder {
-    color: #9ca3af;
+    color: var(--text-muted);
+}
+
+.form-input.error {
+    border-color: var(--danger);
+    animation: shake 0.3s ease;
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
 }
 
 .form-textarea {
     resize: vertical;
-    min-height: 6rem;
+    min-height: 120px;
+    font-family: 'Inter', sans-serif;
     line-height: 1.5;
 }
 
-/* Submit Button */
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
 .submit-btn {
-    width: 100%;
-    background: linear-gradient(135deg, #0369a1 0%, #0ea5e9 100%);
+    margin-top: 16px;
+    padding: 18px 32px;
+    background-color: var(--secondary);
     color: white;
-    padding: 0.875rem 1.5rem;
     border: none;
-    border-radius: 0.5rem;
-    font-size: 1rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.3s ease;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.5rem;
-    box-shadow: 0 4px 6px -1px rgba(3, 105, 161, 0.2);
-    margin-top: 0.5rem;
+    gap: 12px;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
 }
 
 .submit-btn:hover {
-    background: linear-gradient(135deg, #075985 0%, #0284c7 100%);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 8px -1px rgba(3, 105, 161, 0.3);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+    background-color: var(--primary);
 }
 
 .submit-btn:active {
     transform: translateY(0);
 }
 
-.submit-btn:disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-    transform: none;
+.submit-btn i {
+    font-size: 1.2rem;
 }
 
-.btn-icon {
-    font-size: 0.875rem;
-}
-
-/* Success Message */
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
 .success-message {
-    display: none;
-    margin-top: 1.5rem;
-    padding: 1rem;
-    background-color: #f0fdf4;
-    border: 1px solid #bbf7d0;
-    border-radius: 0.5rem;
     text-align: center;
-    flex-direction: column;
-    align-items: center;
-    animation: fadeIn 0.5s ease-out;
-}
-
-.success-message.show {
-    display: flex;
+    padding: 48px 32px;
+    background-color: rgba(23, 57, 105, 0.05);
+    border: 1px solid rgba(23, 57, 105, 0.2);
+    border-radius: 16px;
+    margin-top: 24px;
 }
 
 .success-icon {
-    color: #16a34a;
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
+    font-size: 4rem;
+    color: var(--secondary);
+    margin-bottom: 24px;
 }
 
-.success-title {
+.success-message h3 {
+    font-size: 1.8rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.success-message p {
+    color: var(--text-secondary);
+    margin-bottom: 32px;
+    line-height: 1.6;
+}
+
+.btn-secondary {
+    padding: 12px 24px;
+    background-color: var(--bg-input);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     font-weight: 600;
-    color: #15803d;
-    margin-bottom: 0.25rem;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
 }
 
-.success-text {
-    font-size: 0.875rem;
-    color: #15803d;
+.btn-secondary:hover {
+    background-color: var(--bg-card);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
 }
 
-/* Animations */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================================
+   INFO SIDEBAR
+========================================================= */
+.aspirasi-info {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.info-card {
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 16px;
+    padding: 32px;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--secondary);
+    box-shadow: var(--shadow-lg);
+}
+
+.info-icon {
+    font-size: 2.5rem;
+    color: var(--secondary);
+    margin-bottom: 20px;
+}
+
+.info-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+}
+
+.info-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   RESPONSIVE DESIGN
+========================================================= */
+@media (max-width: 1024px) {
+    .aspirasi-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .aspirasi-info {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .info-card {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+    
+    .hero-title {
+        font-size: 3rem;
+    }
+    
+    .title-yellow {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 900px) {
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .nav-center {
+        gap: 20px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .title-yellow {
+        font-size: 2.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 0 16px;
+    }
+    
+    .nav-center {
+        display: none;
+    }
+    
+    .theme-text {
+        display: none;
+    }
+    
+    .theme-toggle {
+        padding: 8px 12px;
+    }
+    
+    .hero {
+        padding: 100px 16px 40px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .title-yellow {
+        font-size: 2.5rem;
+    }
+    
+    .hero-subtitle .subtitle-text {
+        font-size: 1.2rem;
+    }
+    
+    .hero-desc {
+        font-size: 1rem;
+    }
+    
+    .aspirasi-card {
+        padding: 32px 24px;
+    }
+    
+    .aspirasi-title {
+        font-size: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-card {
+        min-width: auto;
+    }
+    
+    .priority-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .aspirasi-info {
+        flex-direction: column;
+    }
+    
+    .info-card {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 80px 16px 40px;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .title-yellow {
+        font-size: 2rem;
+    }
+    
+    .hero-badge {
+        padding: 6px 16px;
+    }
+    
+    .badge-text {
+        font-size: 0.75rem;
+    }
+    
+    .aspirasi-section {
+        padding: 40px 16px;
+    }
+    
+    .aspirasi-card {
+        padding: 24px 20px;
+    }
+    
+    .submit-btn {
+        padding: 16px 24px;
+        font-size: 1rem;
+    }
+    
+    .footer-container {
+        gap: 32px;
+        padding: 0 16px;
+    }
+    
+    .footer-card {
+        padding: 20px;
+    }
+}
+
+/* ANIMATIONS */
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(20px);
     }
     to {
         opacity: 1;
@@ -293,240 +643,34 @@ body {
     }
 }
 
-.form-group {
-    animation: fadeIn 0.5s ease-out;
+.animate-in {
+    animation: fadeIn 0.6s ease forwards;
 }
 
-.form-group:nth-child(1) { animation-delay: 0.1s; }
-.form-group:nth-child(2) { animation-delay: 0.2s; }
-.form-group:nth-child(3) { animation-delay: 0.3s; }
-.form-group:nth-child(4) { animation-delay: 0.4s; }
-.submit-btn { animation-delay: 0.5s; }
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .nav-menu {
-        display: flex;
-    }
-    
-    .nav-cta {
-        display: block;
-    }
-    
-    .nav-toggle {
-        display: none;
-    }
-    
-    .main-content {
-        padding: 3rem 1rem;
-    }
-    
-    .aspiration-container {
-        max-width: 32rem;
-    }
-    
-    .aspiration-card {
-        padding: 2.5rem;
-    }
-    
-    .aspiration-title {
-        font-size: 2.25rem;
-    }
-    
-    .aspiration-subtitle {
-        font-size: 1rem;
-    }
+/* FORM ANIMATION */
+.aspirasi-form .form-group {
+    animation: fadeIn 0.5s ease forwards;
+    opacity: 0;
 }
 
-@media (max-width: 640px) {
-    .aspiration-card {
-        padding: 1.5rem;
-    }
-    
-    .aspiration-title {
-        font-size: 1.5rem;
-    }
-    
-    .submit-btn {
-        padding: 0.75rem 1.25rem;
-        font-size: 0.875rem;
-    }
-}
+.aspirasi-form .form-group:nth-child(1) { animation-delay: 0.1s; }
+.aspirasi-form .form-group:nth-child(2) { animation-delay: 0.2s; }
+.aspirasi-form .form-group:nth-child(3) { animation-delay: 0.3s; }
+.aspirasi-form .form-group:nth-child(4) { animation-delay: 0.4s; }
+.aspirasi-form .form-group:nth-child(5) { animation-delay: 0.5s; }
+.aspirasi-form .form-group:nth-child(6) { animation-delay: 0.6s; }
 
-/* Footer Styles */
-.footer {
-    background: white;
-    margin-top: 1.5rem;
-    border-top: 1px solid #e2e8f0;
-}
-
-.footer-container {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 3rem 1.5rem;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.footer-main {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 2rem;
-}
-
-.footer-brand {
-    margin-bottom: 1rem;
-}
-
-.footer-logo-text {
-    font-weight: 700;
-    font-size: 1.5rem;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-}
-
-.footer-logo-img {
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 0.5rem;
-}
-
-.footer-description {
-    font-size: 0.875rem;
-    color: #475569;
-    line-height: 1.5;
-    margin-bottom: 1.5rem;
-}
-
-.contact-info {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-.contact-item {
-    display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
-}
-
-.contact-label {
-    font-weight: 600;
-    font-size: 0.875rem;
-    color: #0f172a;
-}
-
-.contact-detail {
-    font-size: 0.875rem;
-    color: #475569;
-}
-
-.footer-navigation {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-}
-
-.nav-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.nav-title {
-    font-weight: 600;
-    font-size: 1rem;
-    color: #0f172a;
-    margin-bottom: 1rem;
-}
-
-.nav-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.nav-item {
-    font-size: 0.875rem;
-    color: #475569;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.nav-item:hover {
-    color: #0369a1;
-}
-
-.fyi-section {
-    display: flex;
-    flex-direction: column;
-}
-
-.fyi-title {
-    font-weight: 600;
-    font-size: 1rem;
-    color: #0f172a;
-    margin-bottom: 1rem;
-}
-
-.fyi-list {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-}
-
-.fyi-item {
-    font-size: 0.875rem;
-    color: #475569;
-    cursor: pointer;
-    transition: color 0.2s ease;
-}
-
-.fyi-item:hover {
-    color: #0369a1;
-}
-/* Footer */
-.footer-bottom {
-    border-top: 1px solid #e2e8f0;
-}
-
-.footer-copyright {
-    max-width: 72rem;
-    margin: 0 auto;
-    padding: 1.5rem 1.5rem;
-    text-align: center;
-    font-size: 0.875rem;
-    color: #475569;
-}
-
-/* Responsive Design */
-@media (min-width: 768px) {
-    .footer-main {
-        grid-template-columns: 2fr 1fr;
-        gap: 3rem;
-    }
-    
-    .footer-navigation {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-    }
-}
-
-@media (max-width: 767px) {
-    .footer-container {
-        padding: 2rem 1rem;
-    }
-    
-    .footer-navigation {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-    }
-    
-    .footer-copyright {
-        padding: 1rem;
-    }
+/* Additional styles for gradient effect */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: linear-gradient(180deg, 
+        rgba(23, 57, 105, 0.9) 0%, 
+        rgba(45, 77, 140, 0.8) 50%, 
+        rgba(74, 111, 191, 0.7) 100%);
+    z-index: 1;
 }

@@ -1,0 +1,400 @@
+/* FOOTER STYLES - FIXED VERSION */
+.footer-main {
+    position: relative;
+    background: linear-gradient(135deg, #0E1C33 0%, #173969 50%, #0E1C33 100%);
+    color: white;
+    padding-top: 5rem;
+    overflow: hidden;
+    width: 100%;
+    margin: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+/* Background decor */
+.footer-bg-decor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.footer-bg-1 {
+    position: absolute;
+    top: -8rem;
+    left: -8rem;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(23, 57, 105, 0.4);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+.footer-bg-2 {
+    position: absolute;
+    bottom: -8rem;
+    right: -8rem;
+    width: 24rem;
+    height: 24rem;
+    background: rgba(246, 177, 40, 0.2);
+    border-radius: 50%;
+    filter: blur(60px);
+}
+
+/* Footer wrapper */
+.footer-wrapper {
+    position: relative;
+    transform-origin: top;
+    transform: scale(0.9);
+    padding: 0.25rem 0;
+    width: 100%;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Footer container */
+.footer-container {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Footer info */
+.footer-info {
+    width: 100%;
+    padding: 0 1.5rem 2rem 1.5rem; /* Padding bawah untuk spacing */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Garis pemisah */
+}
+
+@media (min-width: 768px) {
+    .footer-info {
+        padding: 0 2rem 3rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-info {
+        padding: 0 4rem 3rem 4rem;
+        border-bottom: none; /* Hapus garis di desktop */
+    }
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    border: 2px solid rgba(246, 177, 40, 0.4);
+}
+
+.footer-brand h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: 0.025em;
+}
+
+.footer-tagline {
+    font-size: 0.875rem;
+    color: rgba(246, 177, 40, 0.8);
+    font-style: italic;
+}
+
+.footer-description {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.75;
+    margin-bottom: 2.5rem;
+    max-width: 100%;
+    width: 100%;
+}
+
+/* Contact info */
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+    font-size: 0.875rem;
+    width: 100%;
+}
+
+.contact-item i {
+    color: #F6B128;
+    font-size: 1.125rem;
+    margin-top: 0.125rem;
+    flex-shrink: 0;
+}
+
+.contact-item p {
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.5;
+    width: 100%;
+}
+
+/* Footer card - NAVIGASI RAPI */
+.footer-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-left: none;
+    border-right: none;
+    padding: 2rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Untuk mobile: navigasi full width */
+@media (min-width: 768px) {
+    .footer-card {
+        padding: 2rem 2rem;
+    }
+}
+
+/* Untuk desktop: navigasi rapi di samping */
+@media (min-width: 1024px) {
+    .footer-container {
+        grid-template-columns: 1fr 300px; /* Lebar navigasi fixed */
+        gap: 4rem; /* Spacing antara info dan navigasi */
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        align-items: start; /* Rata atas */
+    }
+    
+    .footer-info {
+        grid-column: 1 / 2;
+        padding: 0;
+        border-bottom: none;
+    }
+    
+    .footer-card {
+        grid-column: 2 / 3;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 1.5rem;
+        padding: 2rem;
+        width: 300px;
+        margin-top: 0;
+    }
+}
+
+.footer-card-title {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #F6B128;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+/* Di desktop, buat judul tanpa chevron */
+@media (min-width: 1024px) {
+    .footer-card-title {
+        justify-content: center;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.lg-hidden {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .lg-hidden {
+        display: none !important;
+    }
+}
+
+/* Footer menu - RAPI */
+.footer-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem; /* Kurangi gap agar lebih rapat */
+    color: rgba(255, 255, 255, 0.7);
+    list-style: none;
+}
+
+/* Untuk mobile: sembunyikan menu default */
+.footer-menu.hidden {
+    display: none;
+}
+
+/* Untuk desktop: selalu tampilkan menu */
+@media (min-width: 1024px) {
+    .footer-menu {
+        display: flex !important;
+        gap: 0.75rem;
+    }
+    
+    .footer-menu.hidden {
+        display: flex !important;
+    }
+}
+
+.footer-menu li {
+    width: 100%;
+}
+
+.footer-menu li a {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.25s ease;
+    color: inherit;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+/* Untuk desktop rapikan alignment */
+@media (min-width: 1024px) {
+    .footer-menu li a {
+        justify-content: flex-start;
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    .footer-menu li a:hover {
+        background: rgba(246, 177, 40, 0.1);
+        color: #F6B128;
+        transform: translateX(5px);
+    }
+}
+
+.footer-menu li a:hover {
+    color: #F6B128;
+}
+
+.footer-menu li a i {
+    font-size: 6px;
+    color: #F6B128;
+    min-width: 6px; /* Agar bullet tetap stabil */
+}
+
+/* Social media */
+.footer-social {
+    margin-top: 3rem; /* Kurangi margin atas */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .footer-social {
+        padding: 0 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-social {
+        padding: 0;
+        margin-top: 4rem;
+    }
+}
+
+.social-icon {
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(23, 57, 105, 0.7);
+    border: 1px solid rgba(246, 177, 40, 0.3);
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    box-shadow: 0 0 20px rgba(246, 177, 40, 0.5);
+    transform: translateY(-2px);
+}
+
+.social-icon i {
+    font-size: 1.875rem;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover i {
+    color: #F6B128;
+}
+
+/* Divider */
+.footer-divider {
+    margin-top: 3rem;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(246, 177, 40, 0.4), transparent);
+    width: 100%;
+}
+
+/* Copyright */
+.footer-copyright {
+    margin-top: 1.5rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 1.5rem 2rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+    .footer-copyright {
+        padding: 0 2rem 2rem 2rem;
+    }
+}
+
+@media (min-width: 1024px) {
+    .footer-copyright {
+        padding: 0 0 2rem 0;
+    }
+}
+
+/* Reset untuk menghilangkan gap */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+/* Pastikan konten sebelum footer tidak ada margin bottom yang berlebihan */
+.content-before-footer {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}

@@ -1,0 +1,303 @@
+/* ==================== HEADER STYLES - PROFESSIONAL ==================== */
+
+/* HEADER CONTAINER */
+header {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    z-index: 1000 !important;
+    background: linear-gradient(135deg, 
+        rgba(14, 28, 51, 0.95) 0%, 
+        rgba(23, 57, 105, 0.95) 50%, 
+        rgba(14, 28, 51, 0.95) 100%) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2) !important;
+}
+
+/* SCALE WRAPPER */
+.scale-wrapper {
+    transform-origin: top !important;
+    transform: scale(0.9) !important;
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+}
+
+/* NAV CONTAINER */
+.nav-container {
+    max-width: 1280px !important;
+    margin: 0 auto !important;
+    padding: 0 24px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    height: 80px !important;
+}
+
+/* LOGO STYLES */
+.logo-wrapper {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    cursor: pointer !important;
+    text-decoration: none !important;
+    transition: transform 0.3s ease !important;
+}
+
+.logo-wrapper:hover {
+    transform: scale(1.05) !important;
+}
+
+.logo-img {
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    border: 2px solid rgba(246, 177, 40, 0.7) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.logo-wrapper:hover .logo-img {
+    border-color: #F6B128 !important;
+    box-shadow: 0 0 20px rgba(246, 177, 40, 0.5) !important;
+}
+
+.logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    line-height: 1.2 !important;
+}
+
+.logo-title {
+    display: block !important;
+    font-size: 20px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    color: white !important;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3) !important;
+}
+
+.logo-subtitle {
+    display: block !important;
+    font-size: 11px !important;
+    color: rgba(246, 177, 40, 0.9) !important;
+    font-style: italic !important;
+    letter-spacing: 0.3px !important;
+}
+
+/* ==================== DESKTOP NAVIGATION ==================== */
+.desktop-nav {
+    display: flex !important;
+    align-items: center !important;
+    gap: 40px !important;
+}
+
+/* NAV LINK STYLES */
+.nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    position: relative !important;
+    padding: 8px 4px !important;
+    transition: all 0.3s ease !important;
+    letter-spacing: 0.3px !important;
+    text-transform: uppercase !important;
+}
+
+.nav-link:hover {
+    color: #F6B128 !important;
+}
+
+/* ANIMATED UNDERLINE EFFECT */
+.nav-link::after {
+    content: "" !important;
+    position: absolute !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 0% !important;
+    height: 2px !important;
+    background: linear-gradient(90deg, transparent, #F6B128, transparent) !important;
+    transform: translateX(-50%) !important;
+    transition: width 0.3s ease !important;
+    border-radius: 2px !important;
+}
+
+.nav-link:hover::after {
+    width: 100% !important;
+}
+
+/* ACTIVE LINK */
+.nav-link.active {
+    color: #F6B128 !important;
+    font-weight: 700 !important;
+}
+
+.nav-link.active::after {
+    width: 100% !important;
+    background: #F6B128 !important;
+    box-shadow: 0 0 10px rgba(246, 177, 40, 0.5) !important;
+}
+
+/* ==================== MOBILE MENU BUTTON ==================== */
+.mobile-menu-btn {
+    display: none !important; /* HIDDEN BY DEFAULT ON DESKTOP */
+    background: none !important;
+    border: none !important;
+    color: white !important;
+    font-size: 28px !important;
+    cursor: pointer !important;
+    padding: 8px !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease !important;
+    width: 44px !important;
+    height: 44px !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+.mobile-menu-btn:hover {
+    color: #F6B128 !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* ==================== MOBILE MENU ==================== */
+.mobile-menu-container {
+    position: absolute !important;
+    top: 100% !important;
+    left: 0 !important;
+    width: 100% !important;
+    background: rgba(14, 28, 51, 0.98) !important;
+    backdrop-filter: blur(20px) !important;
+    -webkit-backdrop-filter: blur(20px) !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+    z-index: 999 !important;
+    
+    /* HIDDEN BY DEFAULT */
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(-20px) !important;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* MOBILE MENU WHEN ACTIVE */
+.mobile-menu-container.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+}
+
+/* MOBILE NAVIGATION MENU */
+.mobile-nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 20px 24px !important;
+    gap: 12px !important;
+}
+
+/* MOBILE NAV LINK */
+.mobile-nav-link {
+    display: flex !important;
+    align-items: center !important;
+    gap: 16px !important;
+    padding: 16px 20px !important;
+    border-radius: 12px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+    text-decoration: none !important;
+    transition: all 0.3s ease !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid transparent !important;
+}
+
+.mobile-nav-link:hover {
+    background: rgba(246, 177, 40, 0.15) !important;
+    color: #F6B128 !important;
+    transform: translateX(10px) !important;
+    border-color: rgba(246, 177, 40, 0.3) !important;
+}
+
+.mobile-nav-link.active {
+    background: rgba(246, 177, 40, 0.2) !important;
+    color: #F6B128 !important;
+    font-weight: 600 !important;
+    border-color: rgba(246, 177, 40, 0.5) !important;
+    box-shadow: 0 4px 12px rgba(246, 177, 40, 0.2) !important;
+}
+
+.mobile-nav-link i {
+    width: 20px !important;
+    text-align: center !important;
+    font-size: 18px !important;
+    transition: transform 0.3s ease !important;
+}
+
+.mobile-nav-link:hover i {
+    transform: scale(1.2) !important;
+}
+
+/* RESPONSIVE DESIGN */
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+    /* Hide desktop nav on mobile */
+    .desktop-nav {
+        display: none !important;
+    }
+    
+    /* Show mobile button on mobile */
+    .mobile-menu-btn {
+        display: flex !important;
+    }
+    
+    /* Adjust header height for mobile */
+    .nav-container {
+        height: 70px !important;
+        padding: 0 16px !important;
+    }
+    
+    /* Smaller logo on mobile */
+    .logo-img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+    
+    .logo-title {
+        font-size: 18px !important;
+    }
+    
+    .logo-subtitle {
+        font-size: 10px !important;
+    }
+}
+
+/* TABLET (769px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .desktop-nav {
+        gap: 30px !important;
+    }
+    
+    .nav-link {
+        font-size: 13px !important;
+    }
+}
+
+/* DESKTOP LARGE (min-width: 1025px) */
+@media (min-width: 1025px) {
+    .desktop-nav {
+        gap: 50px !important;
+    }
+}
+
+/* HIDE MOBILE MENU ON DESKTOP */
+@media (min-width: 769px) {
+    .mobile-menu-container {
+        display: none !important;
+    }
+}
