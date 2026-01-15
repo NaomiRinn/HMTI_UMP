@@ -1,0 +1,123 @@
+<!-- HEADER -->
+<header class="fixed top-0 left-0 w-full z-50
+bg-gradient-to-r from-[#0E1C33]/95 via-[#173969]/95 to-[#0E1C33]/95
+backdrop-blur-lg border-b border-white/10">
+
+  <!-- SCALE WRAPPER (90%) -->
+  <div class="origin-top scale-[0.9]">
+
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-20">
+
+      <!-- LOGO -->
+      <div class="flex items-center gap-4 cursor-pointer">
+        <img 
+          src="images/HMTI.png" 
+          alt="HMTI UMP"
+          class="w-11 h-11 rounded-full object-cover
+                 ring-2 ring-[#F6B128]/70"
+        >
+
+        <div class="leading-tight">
+          <span class="block text-xl font-bold tracking-wide text-white">
+            HMTI UMP
+          </span>
+          <span class="block text-xs text-[#F6B128]/80">
+            Kreativitas · Teknologi · Inovasi
+          </span>
+        </div>
+      </div>
+
+      <!-- DESKTOP NAV -->
+      <nav class="hidden md:flex items-center gap-10 text-sm font-medium">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About Us</a>
+        <a href="#members" class="nav-link">Members</a>
+        <a href="#proker" class="nav-link active">Proker</a>
+        <a href="#studyclub" class="nav-link">StudyClub</a>
+        <a href="#aspiration" class="nav-link">Aspiration</a>
+      </nav>
+
+      <!-- MOBILE BUTTON -->
+      <button id="menuBtn"
+        class="md:hidden text-3xl text-white hover:text-[#F6B128] transition">
+        ☰
+      </button>
+
+    </div>
+
+    <!-- MOBILE MENU -->
+    <div id="mobileMenu"
+      class="hidden md:hidden
+      bg-[#173969]/95 backdrop-blur-xl
+      border-t border-white/10
+      absolute w-full left-0 top-20">
+
+      <nav class="flex flex-col p-8 space-y-5 text-base">
+        <a href="#home" class="mobile-link">Home</a>
+        <a href="#about" class="mobile-link">About Us</a>
+        <a href="#members" class="mobile-link">Members</a>
+        <a href="#proker" class="mobile-link active">Proker</a>
+        <a href="#studyclub" class="mobile-link">StudyClub</a>
+        <a href="#aspiration" class="mobile-link">Aspiration</a>
+      </nav>
+    </div>
+
+  </div>
+</header>
+
+<style>
+  .nav-link {
+    color: rgba(255, 255, 255, 0.75);
+    position: relative;
+    padding: 4px 2px;
+    transition: color 0.25s ease;
+  }
+
+  .nav-link:hover {
+    color: #F6B128;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: #F6B128;
+    transform: translateX(-50%);
+    transition: width 0.25s ease;
+  }
+
+  .nav-link.active {
+    color: #F6B128;
+    font-weight: 600;
+  }
+
+  .nav-link.active::after {
+    width: 100%;
+  }
+
+  /* MOBILE */
+  .mobile-link {
+    padding: 12px 14px;
+    border-radius: 14px;
+    color: rgba(255, 255, 255, 0.85);
+    transition: background 0.25s ease, color 0.25s ease;
+  }
+
+  .mobile-link:hover,
+  .mobile-link.active {
+    background: rgba(246, 177, 40, 0.15);
+    color: #F6B128;
+  }
+</style>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
