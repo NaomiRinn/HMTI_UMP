@@ -271,7 +271,7 @@
     width: 100%;
 }
 
-/* Untuk desktop: rapikan alignment */
+/* Untuk desktop rapikan alignment */
 @media (min-width: 1024px) {
     .footer-menu li a {
         justify-content: flex-start;

@@ -242,7 +242,7 @@ header {
     transform: scale(1.2) !important;
 }
 
-/* ==================== RESPONSIVE DESIGN ==================== */
+/* RESPONSIVE DESIGN */
 
 /* MOBILE (max-width: 768px) */
 @media (max-width: 768px) {

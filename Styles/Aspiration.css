@@ -503,7 +503,7 @@ body {
     color: #475569;
 }
 
-/* Responsive Design */
+/* Responsive Design   */
 @media (min-width: 768px) {
     .footer-main {
         grid-template-columns: 2fr 1fr;
