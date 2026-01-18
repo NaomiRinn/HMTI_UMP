@@ -1,38 +1,5 @@
 /* =========================================================
    CSS VARIABLES - CONSISTENT WITH ABOUT PAGE
-========================================================= */
-:root {
-    /* WARNA UTAMA */
-    --yellow: #F6B128;    /* Kuning/Emas */
-    --blue: #173969;      /* Biru tua */
-    --blue-light: #2D4D8C; /* Biru medium */
-    --blue-lighter: #4A6FBF; /* Biru muda */
-    --blue-gradient: linear-gradient(180deg, var(--blue) 0%, var(--blue-lighter) 100%); /* Gradasi biru */
-    --dark-gradient: linear-gradient(135deg, #0E1C33 0%, #173969 50%, #0E1C33 100%); /* Gradasi dark */
-    --light-gradient: linear-gradient(135deg, #ffffff 0%, #f3f4f6 50%, #e5e7eb 100%); /* Gradasi light */
-    
-    /* BACKGROUND & TEXT */
-    --bg-primary: #FFFFFF;  /* Background putih */
-    --bg-secondary: #F5F5F5; /* Background sekunder */
-    --bg-card: #F9F9F9;     /* Background card */
-    --bg-input: #F0F0F0;    /* Background input */
-    
-    --text-primary: #000000;     /* Text hitam */
-    --text-secondary: #333333;   /* Text abu-abu gelap */
-    --text-muted: #888888;       /* Text abu-abu terang */
-    --text-white: #FFFFFF;       /* Text putih */
-    --text-light-gray: #E5E7EB;  /* Text abu-abu terang */
-    
-    /* WARNA AKTIF */
-    --primary: var(--yellow);     /* Kuning untuk aksen */
-    --secondary: var(--blue);     /* Biru untuk elemen utama */
-    --accent: #059669;           /* Hijau untuk sukses */
-    --danger: #EF4444;           /* Merah untuk error */
-    
-    /* BORDER & SHADOW */
-    --border-color: #DDDDDD;
-    --border-hover: #BBBBBB;
-    --border-light: rgba(255, 255, 255, 0.08);
     
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
     --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -483,6 +450,36 @@ body {
     
     .aspirasi-title {
         font-size: 36px;
+    }
+    
+    .aspirasi-card {
+        padding: 32px 24px;
+    }
+    
+    .aspirasi-title {
+        font-size: 2rem;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    
+    .footer-card {
+        min-width: auto;
+    }
+    
+    .priority-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .aspirasi-info {
+        flex-direction: column;
+    }
+    
+    .info-card {
+        min-width: 100%;
     }
 }
 
