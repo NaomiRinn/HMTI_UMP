@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <title>About HMTI UMP</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/Logo_HMTI.png">
+
+    <!-- GLOBAL CSS -->
+    <link rel="stylesheet" href="Styles/Style.css">
+
+    <!-- HEADER & FOOTER CSS -->
+    <link rel="stylesheet" href="Styles/Header.css">
+    <link rel="stylesheet" href="Styles/Footer.css">
+
+    <!-- ABOUT PAGE CSS -->
+    <link rel="stylesheet" href="Styles/about.css">
+
+    <!-- FONT & ICON -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <div id="header-placeholder"></div>
+
+    <!-- ================= HERO ================= -->
+    <section class="about-hero">
+        <div class="hero-inner">
+            <span class="hero-badge">Tentang Kami</span>
+            <h1><span class="about">About</span> <span class="us">Us</span></h1>
+            <p>
+                Mengenal lebih dekat Himpunan Mahasiswa Teknik Informatika<br>
+                Universitas Muhammadiyah Purwokerto
+            </p>
+
+            <a href="#about-hmti" class="hero-scroll" id="scrollDown">
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- ================= ABOUT HMTI ================= -->
+    <section id="about-hmti" class="about-section">
+        <h2><span class="about">About</span> <span class="hmti">HMTI</span></h2>
+
+
+        <div class="about-card">
+            <p>
+                Himpunan Mahasiswa Teknik Informatika merupakan suatu lembaga kemahasiswaan
+                yang berada di lingkup Program Studi Teknik Informatika, Fakultas Teknik dan
+                Sains, Universitas Muhammadiyah Purwokerto. HMTI FTS UMP didirikan pada tanggal
+                7 Oktober 2007 dan berkedudukan di markas besar HMPS Teknik Informatika
+                Fakultas Teknik dan Sains Universitas Muhammadiyah Purwokerto Kampus I
+                Dukuhwaluh.
+            </p>
+
+            <p>
+                HMTI UMP memiliki struktur organisasi yang terdiri atas satu Badan Pengurus
+                Harian (BPH) dan enam departemen, yaitu Riset dan Teknologi (RISTEK),
+                Hubungan Masyarakat (HUMAS), Komunikasi dan Informasi (KOMINFO),
+                Pengembangan Sumber Daya Manusia (PSDM), Ekonomi Kreatif (EKRAF),
+                serta ADVOKASI.
+            </p>
+
+            <p>
+                Masing-masing departemen berperan aktif dalam mendukung
+                kinerja dan pencapaian tujuan organisasi.
+            </p>
+        </div>
+    </section>
+
+    <!-- ================= VISI MISI ================= -->
+    <section class="vision-section">
+        <h2 class="vision-section-title">
+            <span>Visi</span> dan <span>Misi</span>
+        </h2>
+        <div class="vision-card">
+            <h3>Visi</h3>
+            <p>
+                Menjadikan Himpunan Mahasiswa sebagai wadah pengembangan diri yang aktif,
+                inklusif, dan progresif untuk seluruh mahasiswa Program Studi Teknik Informatika,
+                guna menciptakan lingkungan akademik dan non-akademik yang berkualitas,
+                solid, serta berdaya saing.
+            </p>
+        </div>
+
+        <div class="vision-card">
+            <h3>Misi</h3>
+            <ul>
+                <li>
+                    Meningkatkan peran dan fungsi himpunan sebagai organisasi yang responsif
+                    terhadap kebutuhan dan aspirasi mahasiswa.
+                </li>
+                <li>
+                    Mengembangkan program kerja yang inovatif dan berkelanjutan dalam bidang
+                    akademik, minat bakat, serta pengabdian kepada masyarakat.
+                </li>
+                <li>
+                    Memperkuat solidaritas dan komunikasi internal antar anggota himpunan serta
+                    membangun hubungan harmonis dengan pihak luar, termasuk dosen, alumni,
+                    dan organisasi eksternal.
+                </li>
+                <li>
+                    Membangun sistem kerja yang transparan dan akuntabel dalam setiap kegiatan
+                    serta pengelolaan sumber daya organisasi.
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <div id="footer-placeholder"></div>
+
+    <!-- ================= LOAD HEADER & FOOTER ================= -->
+    <script>
+        fetch("header.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("header-placeholder").innerHTML = data;
+
+                const menuBtn = document.getElementById("menuBtn");
+                const mobileMenu = document.getElementById("mobileMenu");
+
+                if (!menuBtn || !mobileMenu) return;
+
+                menuBtn.addEventListener("click", () => {
+                    mobileMenu.classList.toggle("active");
+
+                    const icon = menuBtn.querySelector("i");
+                    icon.classList.toggle("fa-bars");
+                    icon.classList.toggle("fa-xmark");
+                });
+
+                document.querySelectorAll(".mobile-nav-link").forEach(link => {
+                    link.addEventListener("click", () => {
+                        mobileMenu.classList.remove("active");
+
+                        const icon = menuBtn.querySelector("i");
+                        icon.classList.remove("fa-xmark");
+                        icon.classList.add("fa-bars");
+                    });
+                });
+            });
+
+        fetch("footer.html")
+            .then(res => res.text())
+            .then(data => {
+                document.getElementById("footer-placeholder").innerHTML = data;
+
+                const yearEl = document.getElementById("year");
+                if (yearEl) {
+                    yearEl.textContent = new Date().getFullYear();
+                }
+            });
+    </script>
+
+    <script>
+        document.querySelectorAll('.vision-card').forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('active');
+            });
+        });
+    </script>
+
+    <script>
+        document.getElementById("scrollDown").addEventListener("click", function (e) {
+            e.preventDefault();
+
+            const target = document.querySelector("#about-hmti");
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset;
+            const startPosition = window.pageYOffset;
+            const distance = targetPosition - startPosition;
+            const duration = 900; // semakin besar = semakin smooth
+            let start = null;
+
+            function easeInOutCubic(t) {
+                return t < 0.5
+                    ? 4 * t * t * t
+                    : 1 - Math.pow(-2 * t + 2, 3) / 2;
+            }
+
+            function animation(currentTime) {
+                if (start === null) start = currentTime;
+                const timeElapsed = currentTime - start;
+                const progress = Math.min(timeElapsed / duration, 1);
+                const ease = easeInOutCubic(progress);
+
+                window.scrollTo(0, startPosition + distance * ease);
+
+                if (timeElapsed < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+
+            requestAnimationFrame(animation);
+        });
+    </script>
+
+    <script>
+        document.querySelectorAll('.vision-card').forEach(card => {
+            card.addEventListener('touchstart', () => {
+                card.classList.add('active');
+            });
+
+            card.addEventListener('touchend', () => {
+                setTimeout(() => {
+                    card.classList.remove('active');
+                }, 200);
+            });
+        });
+    </script>
+</body>
+
+</html>
